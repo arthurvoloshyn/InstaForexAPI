@@ -1,22 +1,28 @@
-const dataFetchReducer = (state, action) => {
-    switch (action.type) {
-        case 'FETCH_INIT':
-            return { ...state, isLoading: true, isError: false };
-        case 'FETCH_SUCCESS':
+import { FETCH_INIT, FETCH_FAILURE, FETCH_SUCCESS } from '../../constants/actionTypes';
+
+const dataFetchReducer = (state, { type, payload }) => {
+    switch (type) {
+        case FETCH_INIT:
+            return {
+                ...state,
+                isLoading: true,
+                isError: false
+            };
+        case FETCH_SUCCESS:
             return {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: action.payload,
+                data: payload,
             };
-        case 'FETCH_FAILURE':
+        case FETCH_FAILURE:
             return {
                 ...state,
                 isLoading: false,
                 isError: true,
             };
         default:
-            throw new Error();
+            return state;
     }
 };
 
