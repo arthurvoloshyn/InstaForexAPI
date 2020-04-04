@@ -1,13 +1,13 @@
 import React from 'react';
 import { View } from 'react-native';
-import Instruments from "./src/components/Instruments";
-import DefaultErrorBoundary from "./src/components/DefaultErrorBoundary";
+import QuotesList from "./src/components/QuotesList";
+import ErrorBoundary from "./src/components/ErrorBoundary";
 
 const App = () => (
     <View>
-        <DefaultErrorBoundary>
-            <Instruments />
-        </DefaultErrorBoundary>
+        <ErrorBoundary>
+            <QuotesList />
+        </ErrorBoundary>
     </View>
 );
 

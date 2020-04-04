@@ -1,12 +1,12 @@
 import React from 'react';
 import { Text, FlatList, View, ActivityIndicator } from 'react-native';
 import useDataApi from '../../hooks/useDataApi';
-import Instrument from '../Instrument';
+import Quote from '../Quote';
 
-const Instruments = () => {
+const QuotesList = () => {
     const [{ data, isLoading, isError }] = useDataApi();
 
-    const renderItem = ({ item }) => <Instrument symbol={item.symbol} />;
+    const renderItem = ({ item }) => <Quote symbol={item.symbol} />;
     const keyExtractor = item => item.symbol;
 
     return (
@@ -26,4 +26,4 @@ const Instruments = () => {
     );
 };
 
-export default Instruments;
+export default QuotesList;

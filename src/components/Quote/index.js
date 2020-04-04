@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Instrument = ({ symbol }) => (
+const Quote = ({ symbol }) => (
     <View>
         <Text>{symbol}</Text>
     </View>
 );
 
-export default Instrument;
+export default Quote;

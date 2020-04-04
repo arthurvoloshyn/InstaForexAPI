@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-class DefaultErrorBoundary extends Component {
+class ErrorBoundary extends Component {
   static propTypes = {
     children: PropTypes.node.isRequired
   };
@@ -23,4 +23,4 @@ class DefaultErrorBoundary extends Component {
   }
 }
 
-export default DefaultErrorBoundary;
+export default ErrorBoundary;
