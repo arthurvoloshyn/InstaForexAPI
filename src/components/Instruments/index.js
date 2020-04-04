@@ -9,7 +9,6 @@ const Instruments = () => {
     const [query, setQuery] = useState('redux');
     const [{ data: { hits = [] }, isLoading, isError }, doFetch] = useDataApi(
         'http://hn.algolia.com/api/v1/search?query=redux',
-        { hits: [] },
     );
 
     const renderItem = ({ item }) => <Instrument title={item.title} />;
