@@ -1,4 +1,5 @@
 import { useEffect, useReducer } from "react";
+import { BASE_PATH, QUOTES_LIST } from '../../constants/paths';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
@@ -9,7 +10,7 @@ const useDataApi = () => {
         dispatch(fetchInit());
 
         try {
-            const result = await fetch('https://quotes.instaforex.com/api/quotesList');
+            const result = await fetch(`${BASE_PATH}${QUOTES_LIST}`);
             const data = await result.json();
             const { quotesList = [] } = data;
 
