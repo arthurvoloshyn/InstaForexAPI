@@ -3,23 +3,27 @@ import { Text } from 'react-native';
 import PropTypes from 'prop-types';
 
 class DefaultErrorBoundary extends Component {
-  state = {
-    isError: false
-  };
-
-  static getDerivedStateFromError() {
-    return { isError: true };
-  }
-
   static propTypes = {
     children: PropTypes.node.isRequired
   };
 
+  state = {
+    hasError: false
+  };
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    logErrorToMyService(error, errorInfo);
+  }
+
   render() {
-    const { isError } = this.state;
+    const { hasError } = this.state;
     const { children } = this.props;
 
-    return isError ? <Text>Something went wrong!</Text> : children;
+    return hasError ? <Text>Something went wrong!</Text> : children;
   }
 }
 

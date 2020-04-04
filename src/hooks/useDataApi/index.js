@@ -20,6 +20,8 @@ const useDataApi = (initialUrl, initialData) => {
                 const result = await fetch(url);
                 const data = await result.json();
 
+                throw new Error('error');
+
                 if (!didCancel) {
                     dispatch({ type: 'FETCH_SUCCESS', payload: data });
                 }
