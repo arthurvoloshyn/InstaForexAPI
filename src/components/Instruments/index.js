@@ -4,10 +4,10 @@ import useDataApi from '../../hooks/useDataApi';
 import Instrument from '../Instrument';
 
 const Instruments = () => {
-    const [{ data: { hits = [] }, isLoading, isError }] = useDataApi();
+    const [{ data, isLoading, isError }] = useDataApi();
 
-    const renderItem = ({ item }) => <Instrument title={item.title} />;
-    const keyExtractor = item => item.objectID;
+    const renderItem = ({ item }) => <Instrument symbol={item.symbol} />;
+    const keyExtractor = item => item.symbol;
 
     return (
         <View>
@@ -17,7 +17,7 @@ const Instruments = () => {
                 <ActivityIndicator size="large" color="#0000ff" />
             ) : (
                 <FlatList
-                    data={hits}
+                    data={data}
                     renderItem={renderItem}
                     keyExtractor={keyExtractor}
                 />

@@ -3,7 +3,7 @@ import { FETCH_INIT, FETCH_FAILURE, FETCH_SUCCESS } from '../../constants/action
 export const initState = {
     isLoading: false,
     isError: false,
-    data: { hits: [] },
+    data: [],
 };
 
 const dataFetchReducer = (state = initState, { type, payload }) => {

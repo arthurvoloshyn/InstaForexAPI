@@ -9,10 +9,11 @@ const useDataApi = () => {
         dispatch(fetchInit());
 
         try {
-            const result = await fetch('http://hn.algolia.com/api/v1/search?query=redux');
+            const result = await fetch('https://quotes.instaforex.com/api/quotesList');
             const data = await result.json();
+            const { quotesList = [] } = data;
 
-            dispatch(fetchSuccess(data));
+            dispatch(fetchSuccess(quotesList));
         } catch {
             dispatch(fetchFailure());
         }

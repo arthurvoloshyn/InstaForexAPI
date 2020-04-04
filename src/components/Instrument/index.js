@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const Instrument = ({ title }) => (
+const Instrument = ({ symbol }) => (
     <View>
-        <Text>{title}</Text>
+        <Text>{symbol}</Text>
     </View>
 );
 
