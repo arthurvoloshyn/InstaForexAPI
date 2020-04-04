@@ -1,6 +1,12 @@
 import { FETCH_INIT, FETCH_FAILURE, FETCH_SUCCESS } from '../../constants/actionTypes';
 
-const dataFetchReducer = (state, { type, payload }) => {
+export const initState = {
+    isLoading: false,
+    isError: false,
+    data: { hits: [] },
+};
+
+const dataFetchReducer = (state = initState, { type, payload }) => {
     switch (type) {
         case FETCH_INIT:
             return {
