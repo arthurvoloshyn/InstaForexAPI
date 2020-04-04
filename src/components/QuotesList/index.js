@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Text, FlatList, View, ActivityIndicator } from 'react-native';
-import useDataApi from '../../hooks/useDataApi';
+import { QuotesContext } from '../../context/quotesContext';
 import Quote from '../Quote';
 
 const QuotesList = () => {
-    const [{ data, isLoading, isError }] = useDataApi();
+    const { data, isError, isLoading } = useContext(QuotesContext);
 
     const renderItem = ({ item }) => <Quote symbol={item.symbol} />;
     const keyExtractor = item => item.symbol;
