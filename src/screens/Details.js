@@ -20,6 +20,12 @@ const DetailsScreen = () => {
     loadQuote();
   }, []);
 
+  const changeScreenHandle = () => {
+    const data = { "symbol": null };
+
+    changeScreen(data);
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.block}>
@@ -59,7 +65,7 @@ const DetailsScreen = () => {
         </View>
       )}
       <View style={styles.button}>
-        <AppButton color={SECONDARY_COLOR} onPress={() => changeScreen({"symbol": null})}>
+        <AppButton color={SECONDARY_COLOR} onPress={changeScreenHandle}>
           <AntDesign name="back" size={40}/>
         </AppButton>
       </View>
