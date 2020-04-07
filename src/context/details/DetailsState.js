@@ -33,7 +33,7 @@ const DetailsState = ({children}) => {
     showLoader();
     clearError();
     try {
-      const response = await fetch(`https://quotes.instaforex.com/api/quotesTick?q=${query}`);
+      const response = await fetch(`https://quotes.instaforex.com/api/quotesTick?f=ask%2Cbid%2Cchange%2Cchange24h&q=${query}`);
       const quote = await response.json();
       dispatch({type: FETCH_QUOTE, payload: quote});
     } catch (e) {
