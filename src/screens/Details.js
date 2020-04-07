@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import { MainContext } from "../context/main/MainContext";
 import AppButton from "../components/custom_ui/AppButton";
 import { AntDesign } from '@expo/vector-icons';
-import { THEME } from "../theme";
+import { SECONDARY_COLOR } from "../constants/themes";
 import { DetailsContext } from "../context/details/DetailsContext";
 import AppTextBold from "../components/custom_ui/AppTextBold";
 import AppText from "../components/custom_ui/AppText";
@@ -59,7 +59,7 @@ const DetailsScreen = () => {
         </View>
       )}
       <View style={styles.button}>
-        <AppButton color={THEME.GREY_COLOR} onPress={() => changeScreen({"symbol": null})}>
+        <AppButton color={SECONDARY_COLOR} onPress={() => changeScreen({"symbol": null})}>
           <AntDesign name="back" size={40}/>
         </AppButton>
       </View>

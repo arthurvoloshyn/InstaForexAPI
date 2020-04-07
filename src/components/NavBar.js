@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, Platform, View } from 'react-native';
-import { THEME } from '../theme';
+import { MAIN_COLOR } from '../constants/themes';
 import AppTextBold from './custom_ui/AppTextBold';
 
 const NavBar = ({ title }) => {
@@ -34,14 +34,14 @@ const styles = StyleSheet.create({
         paddingBottom: 10,
     },
     navbarAndroid: {
-        backgroundColor: THEME.MAIN_COLOR,
+        backgroundColor: MAIN_COLOR,
     },
     navbarIos: {
-        borderBottomColor: THEME.MAIN_COLOR,
+        borderBottomColor: MAIN_COLOR,
         borderBottomWidth: 1,
     },
     text: {
-        color: Platform.OS === 'ios' ? THEME.MAIN_COLOR : '#fff',
+        color: Platform.OS === 'ios' ? MAIN_COLOR : '#fff',
         fontSize: 20,
     },
 });

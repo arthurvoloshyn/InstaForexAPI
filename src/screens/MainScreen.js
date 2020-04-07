@@ -13,7 +13,7 @@ import {
 
 import { DetailsContext } from "../context/details/DetailsContext";
 import { MainContext } from "../context/main/MainContext";
-import { THEME } from "../theme";
+import { PADDING_HORIZONTAL, DANGER_COLOR } from "../constants/themes";
 import AppText from "../components/custom_ui/AppText";
 import AppButton from "../components/custom_ui/AppButton";
 import { AppLoader } from "../components/custom_ui/AppLoader";
@@ -36,7 +36,7 @@ const MainScreen = () => {
   } = useContext(DetailsContext);
 
   const {changeScreen} = useContext(MainContext);
-  const [deviceWidth, setDeviceWidth] = useState(Dimensions.get('window').width - THEME.PADDING_HORIZONTAL * 2);
+  const [deviceWidth, setDeviceWidth] = useState(Dimensions.get('window').width - PADDING_HORIZONTAL * 2);
   const [deviceHeight, setDeviceHeight] = useState(Math.round(Dimensions.get('window').height));
   const [value, onChangeText] = useState('');
   const [itemsNumber, setItemsNumber] = useState(0);
@@ -56,7 +56,7 @@ const MainScreen = () => {
 
   useEffect(() => {
     const update = () => {
-      const width = Dimensions.get('window').width - THEME.PADDING_HORIZONTAL * 2;
+      const width = Dimensions.get('window').width - PADDING_HORIZONTAL * 2;
       setDeviceWidth(width);
       const height = Math.round(Dimensions.get('window').height);
       setDeviceHeight(height);
@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
   },
   error: {
     fontSize: 20,
-    color: THEME.DANGER_COLOR,
+    color: DANGER_COLOR,
     marginBottom: 20
   },
 });
