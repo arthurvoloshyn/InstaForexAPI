@@ -48,7 +48,7 @@ const DetailsState = ({children}) => {
     showLoader();
     clearError();
     try {
-      const response = await fetch('https://quotes.instaforex.com/api/quotesList');
+      const response = await fetch('https://quotes.instaforex.com/api/quotesList?f=symbol%2Cdescription%2Cdigits');
       const data = await response.json();
       const quotes = data.quotesList.sort((a, b) => a.symbol > b.symbol ? 1 : -1);
       dispatch({type: FETCH_QUOTES, payload: quotes});
