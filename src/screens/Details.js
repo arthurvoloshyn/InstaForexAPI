@@ -1,10 +1,10 @@
 import React, { useCallback, useContext, useEffect } from 'react';
 import { StyleSheet, View } from 'react-native';
-import { MainContext } from "../context/main/MainContext";
-import AppButton from "../components/custom_ui/AppButton";
 import { AntDesign } from '@expo/vector-icons';
 import { SECONDARY_COLOR } from "../constants/themes";
+import { MainContext } from "../context/main/MainContext";
 import { DetailsContext } from "../context/details/DetailsContext";
+import AppButton from "../components/custom_ui/AppButton";
 import AppTextBold from "../components/custom_ui/AppTextBold";
 import AppText from "../components/custom_ui/AppText";
 
@@ -23,38 +23,38 @@ const DetailsScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.block}>
-        <AppTextBold style={{fontSize: 26}}>Symbol:</AppTextBold>
-        <AppText style={{fontSize: 26}}>{quoteData['symbol']}</AppText>
+        <AppTextBold style={styles.text}>Symbol:</AppTextBold>
+        <AppText style={styles.text}>{quoteData['symbol']}</AppText>
       </View>
       <View style={styles.block}>
-        <AppTextBold style={{fontSize: 26}}>Description:</AppTextBold>
-        <AppText style={{fontSize: 26}}>{quoteData['description']}</AppText>
+        <AppTextBold style={styles.text}>Description:</AppTextBold>
+        <AppText style={styles.text}>{quoteData['description']}</AppText>
       </View>
       <View style={styles.block}>
-        <AppTextBold style={{fontSize: 26}}>Digits:</AppTextBold>
-        <AppText style={{fontSize: 26}}>{quoteData['digits']}</AppText>
+        <AppTextBold style={styles.text}>Digits:</AppTextBold>
+        <AppText style={styles.text}>{quoteData['digits']}</AppText>
       </View>
       <View style={styles.block}>
-        <AppTextBold style={{fontSize: 26}}>Trade:</AppTextBold>
-        <AppText style={{fontSize: 26}}>{quoteData['trade']}</AppText>
+        <AppTextBold style={styles.text}>Trade:</AppTextBold>
+        <AppText style={styles.text}>{quoteData['trade']}</AppText>
       </View>
       {quote.length > 0 && (
         <View style={styles.data}>
           <View style={styles.block}>
-            <AppTextBold style={{fontSize: 26}}>Ask:</AppTextBold>
-            <AppText style={{fontSize: 26}}>{quote[0]['ask']}</AppText>
+            <AppTextBold style={styles.text}>Ask:</AppTextBold>
+            <AppText style={styles.text}>{quote[0]['ask']}</AppText>
           </View>
           <View style={styles.block}>
-            <AppTextBold style={{fontSize: 26}}>Bid:</AppTextBold>
-            <AppText style={{fontSize: 26}}>{quote[0]['bid']}</AppText>
+            <AppTextBold style={styles.text}>Bid:</AppTextBold>
+            <AppText style={styles.text}>{quote[0]['bid']}</AppText>
           </View>
           <View style={styles.block}>
-            <AppTextBold style={{fontSize: 26}}>Change:</AppTextBold>
-            <AppText style={{fontSize: 26}}>{quote[0]['change']}</AppText>
+            <AppTextBold style={styles.text}>Change:</AppTextBold>
+            <AppText style={styles.text}>{quote[0]['change']}</AppText>
           </View>
           <View style={styles.block}>
-            <AppTextBold style={{fontSize: 26}}>Change 24h:</AppTextBold>
-            <AppText style={{fontSize: 26}}>{quote[0]['change24h']}</AppText>
+            <AppTextBold style={styles.text}>Change 24h:</AppTextBold>
+            <AppText style={styles.text}>{quote[0]['change24h']}</AppText>
           </View>
         </View>
       )}
@@ -88,6 +88,9 @@ const styles = StyleSheet.create({
   button: {
     marginTop: 50,
     width: 100
+  },
+  text: {
+    fontSize: 26,
   }
 });
 
