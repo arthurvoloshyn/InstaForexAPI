@@ -40,10 +40,6 @@ const DetailsScreen = () => {
         <AppTextBold style={styles.text}>Digits:</AppTextBold>
         <AppText style={styles.text}>{quoteData['digits']}</AppText>
       </View>
-      <View style={styles.block}>
-        <AppTextBold style={styles.text}>Trade:</AppTextBold>
-        <AppText style={styles.text}>{quoteData['trade']}</AppText>
-      </View>
       {quote.length > 0 && (
         <View style={styles.data}>
           <View style={styles.block}>
