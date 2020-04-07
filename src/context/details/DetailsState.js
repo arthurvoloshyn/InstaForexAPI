@@ -1,5 +1,4 @@
 import React, { useReducer } from 'react';
-import axios from 'axios'
 import { DetailsContext } from "./DetailsContext";
 import { DetailsReducer } from "./DetailsReducer";
 import {
@@ -34,8 +33,8 @@ const DetailsState = ({children}) => {
     showLoader();
     clearError();
     try {
-      const response = await axios.get(`https://quotes.instaforex.com/api/quotesTick?q=${query}`);
-      const quote = response.data;
+      const response = await fetch(`https://quotes.instaforex.com/api/quotesTick?q=${query}`);
+      const quote = await response.json();
       dispatch({type: FETCH_QUOTE, payload: quote});
     } catch (e) {
       showError('Something went wrong, try again');
@@ -49,8 +48,9 @@ const DetailsState = ({children}) => {
     showLoader();
     clearError();
     try {
-      const response = await axios.get('https://quotes.instaforex.com/api/quotesList')
-      const quotes = response.data.quotesList.sort((a, b) => a.symbol > b.symbol ? 1 : -1);
+      const response = await fetch('https://quotes.instaforex.com/api/quotesList');
+      const data = await response.json();
+      const quotes = data.quotesList.sort((a, b) => a.symbol > b.symbol ? 1 : -1);
       dispatch({type: FETCH_QUOTES, payload: quotes});
     } catch (e) {
       showError('Something went wrong, try again');
