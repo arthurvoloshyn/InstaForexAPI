@@ -1,10 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import { QuotesProvider } from './src/context/quotesContext';
 import QuotesList from "./src/components/QuotesList";
 import ErrorBoundary from "./src/components/ErrorBoundary";
+import MainState from "./src/context/main/MainState";
+import DetailsState from "./src/context/details/DetailsState";
+import Main from "./src/layouts/Main";
 
 const App = () => {
     const [fontsLoaded] = useFonts({
@@ -15,13 +17,13 @@ const App = () => {
     if (!fontsLoaded) return <AppLoading />;
 
     return (
-        <View>
-            <ErrorBoundary>
-                <QuotesProvider>
-                    <QuotesList/>
-                </QuotesProvider>
-            </ErrorBoundary>
-        </View>
+        <ErrorBoundary>
+            <MainState>
+                <DetailsState>
+                    <Main/>
+                </DetailsState>
+            </MainState>
+        </ErrorBoundary>
     );
 };
 
