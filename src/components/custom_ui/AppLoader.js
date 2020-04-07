@@ -1,10 +1,10 @@
 import React from 'react';
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
-import { MAIN_COLOR } from '../../constants/themes';
+import { PRIMARY_COLOR } from '../../constants/themes';
 
 export const AppLoader = () => (
     <View style={styles.center}>
-        <ActivityIndicator size="large" color={MAIN_COLOR} />
+        <ActivityIndicator size="large" color={PRIMARY_COLOR} />
     </View>
 );
 

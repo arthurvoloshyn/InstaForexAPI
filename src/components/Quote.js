@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { MAIN_COLOR } from '../constants/themes';
+import { PRIMARY_COLOR } from '../constants/themes';
 import AppTextBold from "./custom_ui/AppTextBold";
 import { DetailsContext } from "../context/details/DetailsContext";
 
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 15,
     borderWidth: 1,
-    borderColor: MAIN_COLOR,
+    borderColor: PRIMARY_COLOR,
     borderRadius: 5,
     marginBottom: 10,
     flex: 1

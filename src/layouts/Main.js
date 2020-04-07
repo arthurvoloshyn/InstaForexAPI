@@ -4,7 +4,7 @@ import Constants from 'expo-constants';
 import { MainContext } from "../context/main/MainContext";
 import MainScreen from "../screens/MainScreen";
 import DetailsScreen from "../screens/Details";
-import { MAIN_COLOR } from '../constants/themes';
+import { PRIMARY_COLOR } from '../constants/themes';
 import NavBar from "../components/NavBar";
 
 function MyStatusBar({backgroundColor, ...props}) {
@@ -21,7 +21,7 @@ const Main = () => {
   return (
     <View style={styles.container}>
       <MyStatusBar
-        backgroundColor={Platform.OS === 'ios' ? '#fff' : MAIN_COLOR}
+        backgroundColor={Platform.OS === 'ios' ? '#fff' : PRIMARY_COLOR}
         barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}
       />
       <NavBar title={header}/>
