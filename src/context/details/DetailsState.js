@@ -1,4 +1,5 @@
 import React, { useReducer } from 'react';
+import { COMMA } from '../../constants/keys';
 import { encodeSeparatedFields } from "../../utils";
 import { DetailsContext } from "./DetailsContext";
 import { DetailsReducer } from "./DetailsReducer";
@@ -35,7 +36,7 @@ const DetailsState = ({children}) => {
     clearError();
     try {
       const separatedFields = ['ask', 'bid', 'change', 'change24h'];
-      const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
+      const encodedSeparatedFields = encodeSeparatedFields(separatedFields, COMMA);
       const response = await fetch(`https://quotes.instaforex.com/api/quotesTick?f=${encodedSeparatedFields}&q=${query}`);
       const quote = await response.json();
       dispatch({type: FETCH_QUOTE, payload: quote});
@@ -52,7 +53,7 @@ const DetailsState = ({children}) => {
     clearError();
     try {
       const separatedFields = ['symbol', 'description', 'digits'];
-      const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
+      const encodedSeparatedFields = encodeSeparatedFields(separatedFields, COMMA);
       const response = await fetch(`https://quotes.instaforex.com/api/quotesList?f=${encodedSeparatedFields}`);
       const data = await response.json();
       const quotes = data.quotesList.sort((a, b) => a.symbol > b.symbol ? 1 : -1);

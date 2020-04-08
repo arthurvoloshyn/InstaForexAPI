@@ -1,3 +1,1 @@
-export const encodeSeparatedFields = (fields) => {
-    return fields.join('%2C');
-};
+export const encodeSeparatedFields = (fields, symbol) => fields.join(symbol);
