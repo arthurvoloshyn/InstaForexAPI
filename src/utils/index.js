@@ -7,3 +7,5 @@ export const encodeSeparatedFields = fields => {
 };
 
 export const encodeSymbol = symbol => encodeURIComponent(symbol);
+
+export const sortBySymbol = data => data.sort((a, b) => a.symbol.localeCompare(b.symbol));

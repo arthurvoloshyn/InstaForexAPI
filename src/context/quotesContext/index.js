@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
-import useDataApi from '../../hooks/useDataApi';
+import useDataApi from '../../hooks/useFetchQuotesList';
 
 export const QuotesContext = createContext();
 
