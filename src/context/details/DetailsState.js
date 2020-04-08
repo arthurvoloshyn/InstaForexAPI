@@ -1,5 +1,5 @@
 import React, { useReducer } from 'react';
-import { COMMA } from '../../constants/keys';
+import { COMMA, NUMBER_SIGN } from '../../constants/signs';
 import { encodeSeparatedFields } from "../../utils";
 import { DetailsContext } from "./DetailsContext";
 import { DetailsReducer } from "./DetailsReducer";
@@ -31,7 +31,7 @@ const DetailsState = ({children}) => {
   const [state, dispatch] = useReducer(DetailsReducer, initialSate);
 
   const fetchQuote = async (quoteId) => {
-    const query = quoteId.replace('#','%23');
+    const query = quoteId.replace('#', NUMBER_SIGN);
     showLoader();
     clearError();
     try {
