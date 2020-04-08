@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
-import { COMMA, NUMBER_SIGN } from '../../constants/signs';
-import { encodeSeparatedFields } from "../../utils";
+import { encodeSeparatedFields, encodeSymbol } from "../../utils";
 import { DetailsContext } from "./DetailsContext";
 import { DetailsReducer } from "./DetailsReducer";
 import {
@@ -22,8 +21,8 @@ const DetailsState = ({children}) => {
     quote: [],
     quotesFiltered: [],
     startIndex: 0,
-    lastIndex: 10,
-    itemsPerPage: 10,
+    lastIndex: 6,
+    itemsPerPage: 6,
     loading: false,
     error: null,
   };
@@ -31,12 +30,12 @@ const DetailsState = ({children}) => {
   const [state, dispatch] = useReducer(DetailsReducer, initialSate);
 
   const fetchQuote = async (quoteId) => {
-    const query = quoteId.replace('#', NUMBER_SIGN);
+    const query = encodeSymbol(quoteId);
     showLoader();
     clearError();
     try {
       const separatedFields = ['ask', 'bid', 'change', 'change24h'];
-      const encodedSeparatedFields = encodeSeparatedFields(separatedFields, COMMA);
+      const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
       const response = await fetch(`https://quotes.instaforex.com/api/quotesTick?f=${encodedSeparatedFields}&q=${query}`);
       const quote = await response.json();
       dispatch({type: FETCH_QUOTE, payload: quote});
@@ -53,7 +52,7 @@ const DetailsState = ({children}) => {
     clearError();
     try {
       const separatedFields = ['symbol', 'description', 'digits'];
-      const encodedSeparatedFields = encodeSeparatedFields(separatedFields, COMMA);
+      const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
       const response = await fetch(`https://quotes.instaforex.com/api/quotesList?f=${encodedSeparatedFields}`);
       const data = await response.json();
       const quotes = data.quotesList.sort((a, b) => a.symbol > b.symbol ? 1 : -1);

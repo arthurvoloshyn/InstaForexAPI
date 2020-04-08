@@ -17,7 +17,7 @@ import { PADDING_HORIZONTAL, DANGER_COLOR } from "../constants/themes";
 import AppText from "../components/custom_ui/AppText";
 import AppButton from "../components/custom_ui/AppButton";
 import { AppLoader } from "../components/custom_ui/AppLoader";
-import Quote from "../components/Quote";
+import Quote from "../components/Quote.js";
 import { AntDesign } from '@expo/vector-icons';
 
 const MainScreen = () => {
