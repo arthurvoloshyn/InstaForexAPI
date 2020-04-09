@@ -1,7 +1,9 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import { View, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import PropTypes from "prop-types";
 import { PRIMARY_COLOR } from '../../constants/themes';
 import AppTextBold from '../AppTextBold';
+import styles from './styles';
 
 const AppButton = ({ children, onPress, color = PRIMARY_COLOR }) => {
     const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
@@ -15,18 +17,8 @@ const AppButton = ({ children, onPress, color = PRIMARY_COLOR }) => {
     );
 };
 
-const styles = StyleSheet.create({
-    button: {
-        paddingHorizontal: 10,
-        paddingVertical: 10,
-        borderRadius: 5,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    text: {
-        color: '#fff',
-    },
-});
+AppButton.propTypes = {
+    children: PropTypes.node.isRequired
+};
 
 export default AppButton;
