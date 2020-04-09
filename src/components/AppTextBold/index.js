@@ -3,7 +3,7 @@ import { Text } from "react-native";
 import PropTypes from "prop-types";
 import styles from './styles';
 
-const AppTextBold = ({ style, children }) => <Text style={[styles.default, style]}>{children}</Text>;
+const AppTextBold = ({ style, children, ...attrs }) => <Text {...attrs} style={[styles.default, style]}>{children}</Text>;
 
 AppTextBold.propTypes = {
     children: PropTypes.node.isRequired,

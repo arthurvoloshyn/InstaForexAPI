@@ -5,11 +5,11 @@ import { PRIMARY_COLOR } from '../../constants/themes';
 import AppTextBold from '../AppTextBold';
 import styles from './styles';
 
-const AppButton = ({ children, onPress, color, activeOpacity }) => {
+const AppButton = ({ children, onPress, color, activeOpacity, ...attrs }) => {
     const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
     return (
-        <Wrapper onPress={onPress} activeOpacity={activeOpacity}>
+        <Wrapper {...attrs} onPress={onPress} activeOpacity={activeOpacity}>
             <View style={[ styles.button, { backgroundColor: color } ]}>
                 <AppTextBold style={styles.text}>{children}</AppTextBold>
             </View>

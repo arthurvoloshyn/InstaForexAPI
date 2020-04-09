@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 import { PRIMARY_COLOR } from '../../constants/themes';
 import styles from './styles';
 
-const AppLoader = ({ size, color }) => (
+const AppLoader = ({ size, color, ...attrs }) => (
     <View style={styles.center}>
-        <ActivityIndicator size={size} color={color} />
+        <ActivityIndicator size={size} color={color} {...attrs} />
     </View>
 );
 
