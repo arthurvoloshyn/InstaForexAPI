@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ViewPropTypes } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
@@ -7,7 +7,7 @@ const AppCard = ({ style, children }) => <View style={[ styles.default, style ]}
 
 AppCard.propTypes = {
     children: PropTypes.node.isRequired,
-    style: ViewPropTypes.style,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 AppCard.defaultProps = {
