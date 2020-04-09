@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import AppText from '../AppText';
 import styles from './styles';
 
-const NavBar = ({ title }) => (
-    <View style={styles.navbar}>
+const NavBar = ({ title, ...attrs }) => (
+    <View style={styles.navbar} {...attrs}>
         <AppText style={styles.text}>{title}</AppText>
     </View>
 );

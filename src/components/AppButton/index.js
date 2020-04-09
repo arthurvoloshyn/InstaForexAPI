@@ -6,12 +6,12 @@ import { isAndroid } from "../../services/detectDevice";
 import AppText from '../AppText';
 import styles from './styles';
 
-const AppButton = ({ children, onPress, color, activeOpacity, ...attrs }) => {
+const AppButton = ({ children, onPress, backgroundColor, activeOpacity, ...attrs }) => {
     const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
-    const buttonStyles = { backgroundColor: color };
+    const buttonStyles = { backgroundColor };
 
     return (
-        <Wrapper {...attrs} onPress={onPress} activeOpacity={activeOpacity}>
+        <Wrapper onPress={onPress} activeOpacity={activeOpacity} {...attrs}>
             <View style={[styles.button, buttonStyles]}>
                 <AppText style={styles.text}>{children}</AppText>
             </View>
