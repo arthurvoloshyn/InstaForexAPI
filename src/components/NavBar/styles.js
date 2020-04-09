@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     text: {
         color: isIOS ? PRIMARY_COLOR : '#fff',
         fontSize: 20,
-        fontWeight: 800,
+        fontWeight: 'bold',
     },
 });
 
