@@ -15,5 +15,3 @@ AppText.defaultProps = {
 };
 
 export default AppText;
-
-
