@@ -5,7 +5,7 @@ import { PRIMARY_COLOR } from '../../constants/themes';
 import AppTextBold from '../AppTextBold';
 import styles from './styles';
 
-const AppButton = ({ children, onPress, color = PRIMARY_COLOR }) => {
+const AppButton = ({ children, onPress, color }) => {
     const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
 
     return (
@@ -18,7 +18,14 @@ const AppButton = ({ children, onPress, color = PRIMARY_COLOR }) => {
 };
 
 AppButton.propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
+    onPress: PropTypes.func,
+    color: PropTypes.string,
+};
+
+AppButton.defaultProps = {
+    onPress: () => {},
+    color: PRIMARY_COLOR,
 };
 
 export default AppButton;
