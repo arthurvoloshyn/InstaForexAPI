@@ -2,11 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, StyleSheet, Text } from 'react-native';
 
-const AppCard = props => {
+const Index = props => {
     return <View style={{ ...styles.default, ...props.style }}>{props.children}</View>;
 };
 
-AppCard.propTypes = {};
+Index.propTypes = {};
 
 const styles = StyleSheet.create({
     default: {
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default AppCard;
+export default Index;

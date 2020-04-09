@@ -4,9 +4,6 @@ import { AppLoading } from 'expo';
 import { QuotesProvider } from './src/context/quotesContext';
 import QuotesList from "./src/components/QuotesList";
 import ErrorBoundary from "./src/components/ErrorBoundary";
-import MainState from "./src/context/main/MainState";
-import DetailsState from "./src/context/details/DetailsState";
-import Main from "./src/layouts/Main";
 
 const App = () => {
     const [fontsLoaded] = useFonts({
@@ -18,11 +15,9 @@ const App = () => {
 
     return (
         <ErrorBoundary>
-            <MainState>
-                <DetailsState>
-                    <Main/>
-                </DetailsState>
-            </MainState>
+            <QuotesProvider>
+                <QuotesList />
+            </QuotesProvider>
         </ErrorBoundary>
     );
 };

@@ -1,14 +1,14 @@
 import React from "react";
 import { StyleSheet, Text } from "react-native";
 
-const AppTextBold = props => {
+const Index = props => {
   return <Text style={{...styles.default, ...props.style}}>{props.children}</Text>;
 };
 
-export default AppTextBold;
+export default Index;
 
 const styles = StyleSheet.create({
     default: {
-        fontFamily: 'roboto-bold'
+        fontFamily: 'roboto-regular'
     }
 });
