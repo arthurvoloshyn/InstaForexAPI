@@ -1,17 +1,23 @@
 import React from 'react';
-import { StyleSheet, View, ActivityIndicator } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
+import PropTypes from "prop-types";
 import { PRIMARY_COLOR } from '../../constants/themes';
+import styles from './styles';
 
-export const Index = () => (
+const AppLoader = ({ size, color }) => (
     <View style={styles.center}>
-        <ActivityIndicator size="large" color={PRIMARY_COLOR} />
+        <ActivityIndicator size={size} color={color} />
     </View>
 );
 
-const styles = StyleSheet.create({
-    center: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-});
+AppLoader.propTypes = {
+    size: PropTypes.string,
+    color: PropTypes.string,
+};
+
+AppLoader.defaultProps = {
+    size: 'large',
+    color: PRIMARY_COLOR,
+};
+
+export default AppLoader;
