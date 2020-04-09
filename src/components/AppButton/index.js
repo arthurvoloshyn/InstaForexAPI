@@ -2,11 +2,12 @@ import React from 'react';
 import { View, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
 import PropTypes from "prop-types";
 import { PRIMARY_COLOR } from '../../constants/themes';
+import { isAndroid } from "../../services/detectDevice";
 import AppTextBold from '../AppTextBold';
 import styles from './styles';
 
 const AppButton = ({ children, onPress, color, activeOpacity, ...attrs }) => {
-    const Wrapper = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+    const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
 
     return (
         <Wrapper {...attrs} onPress={onPress} activeOpacity={activeOpacity}>
