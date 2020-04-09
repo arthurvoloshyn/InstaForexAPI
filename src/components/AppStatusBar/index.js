@@ -1,12 +1,12 @@
 import React from 'react';
 import { StatusBar, View } from 'react-native';
-import Constants from 'expo-constants';
+import styles from './styles';
 
 const AppStatusBar = ({ backgroundColor, translucent, ...attrs }) => {
-    const statusBarStyles = { backgroundColor, height: Constants.statusBarHeight };
+    const statusBarStyles = { backgroundColor };
 
     return (
-        <View style={statusBarStyles}>
+        <View style={[styles, statusBarStyles]}>
             <StatusBar translucent={translucent} backgroundColor={backgroundColor} {...attrs} />
         </View>
     );
