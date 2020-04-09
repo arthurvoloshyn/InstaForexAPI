@@ -1,7 +1,5 @@
-import { COMMA } from '../constants/signs';
-
 export const encodeSeparatedFields = fields => {
-    const separatedFields = fields.join(COMMA);
+    const separatedFields = fields.join(',');
 
     return encodeURIComponent(separatedFields);
 };
