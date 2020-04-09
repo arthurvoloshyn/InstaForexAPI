@@ -1,27 +1,17 @@
 import React from 'react';
+import { View, ViewPropTypes } from 'react-native';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Text } from 'react-native';
+import styles from './styles';
 
-const Index = props => {
-    return <View style={{ ...styles.default, ...props.style }}>{props.children}</View>;
+const AppCard = ({ style, children }) => <View style={[ styles.default, style ]}>{children}</View>;
+
+AppCard.propTypes = {
+    children: PropTypes.node.isRequired,
+    style: ViewPropTypes.style,
 };
 
-Index.propTypes = {};
+AppCard.defaultProps = {
+    style: {},
+};
 
-const styles = StyleSheet.create({
-    default: {
-        padding: 20,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        shadowColor: '#000',
-        shadowRadius: 2,
-        shadowOpacity: 0.3,
-        shadowOffset: { width: 2, height: 2 },
-        elevation: 8,
-        backgroundColor: '#fff',
-        borderRadius: 10,
-    },
-});
-
-export default Index;
+export default AppCard;
