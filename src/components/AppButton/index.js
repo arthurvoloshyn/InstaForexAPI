@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native';
+import { View, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 import PropTypes from "prop-types";
 import { PRIMARY_COLOR } from '../../constants/themes';
 import { isAndroid } from "../../services/detectDevice";
