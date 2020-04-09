@@ -1,14 +1,17 @@
 import React from "react";
-import { StyleSheet, Text } from "react-native";
+import { Text } from "react-native";
+import PropTypes from "prop-types";
+import styles from './styles';
 
-const Index = props => {
-  return <Text style={{...styles.default, ...props.style}}>{props.children}</Text>;
+const AppTextBold = ({ style, children }) => <Text style={[styles.default, style]}>{children}</Text>;
+
+AppTextBold.propTypes = {
+    children: PropTypes.node.isRequired,
+    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
-export default Index;
+AppTextBold.defaultProps = {
+    style: {},
+};
 
-const styles = StyleSheet.create({
-    default: {
-        fontFamily: 'roboto-bold'
-    }
-});
+export default AppTextBold;
