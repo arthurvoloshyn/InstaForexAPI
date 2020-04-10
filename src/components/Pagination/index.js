@@ -25,7 +25,7 @@ const Pagination = ({ totalPages, currentPage, onPress }) => {
             </Wrapper>
 
             <View style={[styles.pagination, styles.body]}>
-                <AppText style={styles.text}>{currentPage} of {totalPages}</AppText>
+                <AppText textStyle={styles.text}>{currentPage} of {totalPages}</AppText>
             </View>
 
             <Wrapper onPress={nextPage} activeOpacity={0.7} disabled={isLastPage}>

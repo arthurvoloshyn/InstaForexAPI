@@ -1,14 +1,15 @@
 import React from 'react';
 import { View } from 'react-native';
 import PropTypes from "prop-types";
+import { DANGER_COLOR } from "../../constants/themes";
 import AppButton from "../AppButton";
 import AppText from "../AppText";
 import styles from './styles';
 
 const ErrorIndicator = ({ onPress }) => (
     <View style={styles.center}>
-        <AppText style={styles.error}>Something went wrong!</AppText>
-        {onPress && <AppButton onPress={onPress}>Try again</AppButton>}
+        <AppText textStyle={styles.error}>Something went wrong!</AppText>
+        <AppButton onPress={onPress} backgroundColor={DANGER_COLOR}>Try again</AppButton>
     </View>
 );
 
@@ -17,7 +18,7 @@ ErrorIndicator.propTypes = {
 };
 
 ErrorIndicator.defaultProps = {
-    onPress: null,
+    onPress: () => {},
 };
 
 export default ErrorIndicator;

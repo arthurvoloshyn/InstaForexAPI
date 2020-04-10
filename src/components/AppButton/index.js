@@ -13,7 +13,7 @@ const AppButton = ({ children, onPress, backgroundColor, activeOpacity, ...attrs
     return (
         <Wrapper onPress={onPress} activeOpacity={activeOpacity} {...attrs}>
             <View style={[styles.button, buttonStyles]}>
-                <AppText style={styles.text}>{children}</AppText>
+                <AppText textStyle={styles.text}>{children}</AppText>
             </View>
         </Wrapper>
     );

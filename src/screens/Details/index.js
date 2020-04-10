@@ -22,38 +22,38 @@ const Details = ({ route }) => {
     return (
         <View style={styles.container}>
             <View style={styles.block}>
-                <AppText style={[styles.text, styles.textBold]}>Symbol:</AppText>
-                <AppText style={styles.text}>{symbol}</AppText>
+                <AppText textStyle={[styles.text, styles.textBold]}>Symbol:</AppText>
+                <AppText textStyle={styles.text}>{symbol}</AppText>
             </View>
             <View style={styles.block}>
-                <AppText style={[styles.text, styles.textBold]}>Description:</AppText>
-                <AppText style={styles.text}>{description}</AppText>
+                <AppText textStyle={[styles.text, styles.textBold]}>Description:</AppText>
+                <AppText textStyle={styles.text}>{description}</AppText>
             </View>
             <View style={styles.block}>
-                <AppText style={[styles.text, styles.textBold]}>Digits:</AppText>
-                <AppText style={styles.text}>{data['digits']}</AppText>
+                <AppText textStyle={[styles.text, styles.textBold]}>Digits:</AppText>
+                <AppText textStyle={styles.text}>{data['digits']}</AppText>
             </View>
             <View style={styles.block}>
-                <AppText style={[styles.text, styles.textBold]}>Trade:</AppText>
-                <AppText style={styles.text}>{data['trade']}</AppText>
+                <AppText textStyle={[styles.text, styles.textBold]}>Trade:</AppText>
+                <AppText textStyle={styles.text}>{data['trade']}</AppText>
             </View>
             {data.length > 0 && (
                 <View style={styles.data}>
                     <View style={styles.block}>
-                        <AppText style={[styles.text, styles.textBold]}>Ask:</AppText>
-                        <AppText style={styles.text}>{data[0]['ask']}</AppText>
+                        <AppText textStyle={[styles.text, styles.textBold]}>Ask:</AppText>
+                        <AppText textStyle={styles.text}>{data[0]['ask']}</AppText>
                     </View>
                     <View style={styles.block}>
-                        <AppText style={[styles.text, styles.textBold]}>Bid:</AppText>
-                        <AppText style={styles.text}>{data[0]['bid']}</AppText>
+                        <AppText textStyle={[styles.text, styles.textBold]}>Bid:</AppText>
+                        <AppText textStyle={styles.text}>{data[0]['bid']}</AppText>
                     </View>
                     <View style={styles.block}>
-                        <AppText style={[styles.text, data.textBold]}>Change:</AppText>
-                        <AppText style={styles.text}>{data[0]['change']}</AppText>
+                        <AppText textStyle={[styles.text, data.textBold]}>Change:</AppText>
+                        <AppText textStyle={styles.text}>{data[0]['change']}</AppText>
                     </View>
                     <View style={styles.block}>
-                        <AppText style={[styles.text, styles.textBold]}>Change 24h:</AppText>
-                        <AppText style={styles.text}>{data[0]['change24h']}</AppText>
+                        <AppText textStyle={[styles.text, styles.textBold]}>Change 24h:</AppText>
+                        <AppText textStyle={styles.text}>{data[0]['change24h']}</AppText>
                     </View>
                 </View>
             )}

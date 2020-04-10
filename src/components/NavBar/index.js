@@ -6,7 +6,7 @@ import styles from './styles';
 
 const NavBar = ({ title }) => (
     <View style={styles.navbar}>
-        <AppText style={styles.text}>{title}</AppText>
+        <AppText textStyle={styles.text}>{title}</AppText>
     </View>
 );
 
