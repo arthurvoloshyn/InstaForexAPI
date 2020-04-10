@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Text } from 'react-native';
 import PropTypes from 'prop-types';
+import ErrorIndicator from "../ErrorIndicator";
 
 class ErrorBoundary extends Component {
   static propTypes = {
@@ -19,7 +19,7 @@ class ErrorBoundary extends Component {
     const { hasError } = this.state;
     const { children } = this.props;
 
-    return hasError ? <Text>Something went wrong!</Text> : children;
+    return hasError ? <ErrorIndicator /> : children;
   }
 }
 

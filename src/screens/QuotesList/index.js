@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Text, FlatList, View, ActivityIndicator } from 'react-native';
 import { QuotesContext } from '../../context/quotesContext';
-import Quote from '../Quote';
+import Quote from '../../components/Quote';
 
 const QuotesList = () => {
     const { data, isError, isLoading } = useContext(QuotesContext);

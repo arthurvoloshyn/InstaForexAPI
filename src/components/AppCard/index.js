@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 
-const AppCard = ({ cardStyle, children, ...attrs }) => <View style={[styles.default, cardStyle]} {...attrs}>{children}</View>;
+const AppCard = ({ cardStyle, children, ...attrs }) => <View style={[styles.card, cardStyle]} {...attrs}>{children}</View>;
 
 AppCard.propTypes = {
     children: PropTypes.node.isRequired,

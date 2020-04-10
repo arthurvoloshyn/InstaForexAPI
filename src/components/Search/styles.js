@@ -1,18 +1,19 @@
 import { StyleSheet } from "react-native";
+import { deviceWidth } from "../../services/getDeviceSize";
 
 const styles = StyleSheet.create({
-    card: {
-        padding: 20,
+    input: {
+        padding: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowRadius: 2,
-        shadowOpacity: 0.3,
-        shadowOffset: { width: 2, height: 2 },
-        elevation: 8,
+        borderColor: 'gray',
+        borderWidth: 1,
         backgroundColor: '#fff',
-        borderRadius: 10,
+        borderRadius: 5,
+        fontSize: 26,
+        marginBottom: 10,
+        width: deviceWidth,
     },
 });
 

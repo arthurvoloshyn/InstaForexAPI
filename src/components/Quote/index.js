@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import AppText from "../AppText";
 import styles from './styles';
 
-const Quote = ({ symbol, onPress, ...attrs }) => (
-    <TouchableOpacity onPress={onPress} {...attrs}>
+const Quote = ({ symbol, onPress }) => (
+    <TouchableOpacity onPress={onPress}>
         <View style={styles.quote}>
             <AppText textStyle={styles.text}>{symbol}</AppText>
         </View>

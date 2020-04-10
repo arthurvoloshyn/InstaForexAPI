@@ -1,8 +1,9 @@
+import 'react-native-gesture-handler';
 import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import { QuotesProvider } from './src/context/quotesContext';
-import QuotesList from "./src/components/QuotesList";
+import Navigation from "./src/navigation";
 import ErrorBoundary from "./src/components/ErrorBoundary";
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
     return (
         <ErrorBoundary>
             <QuotesProvider>
-                <QuotesList />
+                <Navigation />
             </QuotesProvider>
         </ErrorBoundary>
     );
