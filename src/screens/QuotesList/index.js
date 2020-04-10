@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Text, FlatList, View, ActivityIndicator } from 'react-native';
+import { FlatList, View, ActivityIndicator } from 'react-native';
 import { QuotesContext } from '../../context/quotesContext';
+import ErrorIndicator from "../../components/ErrorIndicator";
 import Quote from '../../components/Quote';
 
 const QuotesList = () => {
@@ -11,7 +12,7 @@ const QuotesList = () => {
 
     return (
         <View>
-            {isError && <Text>Something went wrong...</Text>}
+            {isError && <ErrorIndicator />}
 
             {isLoading ? (
                 <ActivityIndicator size="large" color="#0000ff" />

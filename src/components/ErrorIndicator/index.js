@@ -8,7 +8,7 @@ import styles from './styles';
 const ErrorIndicator = ({ onPress }) => (
     <View style={styles.center}>
         <AppText style={styles.error}>Something went wrong!</AppText>
-        <AppButton onPress={onPress}>Try again</AppButton>
+        {onPress && <AppButton onPress={onPress}>Try again</AppButton>}
     </View>
 );
 
@@ -17,7 +17,7 @@ ErrorIndicator.propTypes = {
 };
 
 ErrorIndicator.defaultProps = {
-    onPress: () => {},
+    onPress: null,
 };
 
 export default ErrorIndicator;
