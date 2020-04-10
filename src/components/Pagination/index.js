@@ -30,13 +30,11 @@ const Pagination = ({ onPress }) => {
 };
 
 Pagination.propTypes = {
-    value: PropTypes.string,
-    onChangeText: PropTypes.func
+    onPress: PropTypes.func
 };
 
 Pagination.defaultProps = {
-    value: '',
-    onChangeText: () => {}
+    onPress: () => {}
 };
 
 export default Pagination;
