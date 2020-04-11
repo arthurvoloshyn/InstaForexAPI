@@ -22,13 +22,13 @@ const AppButton = ({ children, onPress, backgroundColor, activeOpacity, ...attrs
 AppButton.propTypes = {
     children: PropTypes.node.isRequired,
     onPress: PropTypes.func,
-    color: PropTypes.string,
+    backgroundColor: PropTypes.string,
     activeOpacity: PropTypes.number,
 };
 
 AppButton.defaultProps = {
     onPress: () => {},
-    color: PRIMARY_COLOR,
+    backgroundColor: PRIMARY_COLOR,
     activeOpacity: 0.7,
 };
 
