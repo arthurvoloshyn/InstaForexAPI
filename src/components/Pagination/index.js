@@ -7,7 +7,7 @@ import { isAndroid } from "../../services/detectDevice";
 import AppText from "../AppText";
 import styles from './styles';
 
-const Pagination = ({ totalPages, currentPage, onPress }) => {
+const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity }) => {
     if (totalPages <= 1) return null;
 
     const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
@@ -20,16 +20,16 @@ const Pagination = ({ totalPages, currentPage, onPress }) => {
 
     return (
         <View style={[styles.pagination, styles.container]}>
-            <Wrapper onPress={prevPage} activeOpacity={0.7} disabled={isFirstPage}>
-                <AntDesign name="caretleft" size={40}/>
+            <Wrapper onPress={prevPage} activeOpacity={activeOpacity} disabled={isFirstPage}>
+                <AntDesign name="caretleft" size={iconsSize} />
             </Wrapper>
 
             <View style={[styles.pagination, styles.body]}>
                 <AppText textStyle={styles.text}>{currentPage} of {totalPages}</AppText>
             </View>
 
-            <Wrapper onPress={nextPage} activeOpacity={0.7} disabled={isLastPage}>
-                <AntDesign name="caretright" size={40}/>
+            <Wrapper onPress={nextPage} activeOpacity={activeOpacity} disabled={isLastPage}>
+                <AntDesign name="caretright" size={iconsSize} />
             </Wrapper>
         </View>
     );
@@ -38,13 +38,17 @@ const Pagination = ({ totalPages, currentPage, onPress }) => {
 Pagination.propTypes = {
     currentPage: PropTypes.number,
     totalPages: PropTypes.number,
-    onPress: PropTypes.func
+    onPress: PropTypes.func,
+    iconsSize: PropTypes.number,
+    activeOpacity: PropTypes.number,
 };
 
 Pagination.defaultProps = {
     currentPage: 1,
     totalPages: 1,
-    onPress: () => {}
+    onPress: () => {},
+    iconsSize: 40,
+    activeOpacity: 0.7,
 };
 
 export default Pagination;

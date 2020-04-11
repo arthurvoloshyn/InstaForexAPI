@@ -5,8 +5,9 @@ import AppText from "../AppText";
 import styles from './styles';
 
 const ErrorIndicator = ({ children }) => (
-    <View style={styles.center}>
-        <AppText textStyle={styles.error}>Something went wrong!</AppText>
+    <View style={styles.error}>
+        <AppText textStyle={styles.text}>Something went wrong!</AppText>
+
         {children}
     </View>
 );

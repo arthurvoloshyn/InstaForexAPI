@@ -7,11 +7,11 @@ const AppCard = ({ cardStyle, children, ...attrs }) => <View style={[styles.card
 
 AppCard.propTypes = {
     children: PropTypes.node.isRequired,
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    cardStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 AppCard.defaultProps = {
-    style: {},
+    cardStyle: {},
 };
 
 export default AppCard;

@@ -7,11 +7,11 @@ const AppText = ({ textStyle, children, ...attrs }) => <Text style={[styles.text
 
 AppText.propTypes = {
     children: PropTypes.node.isRequired,
-    style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+    textStyle: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 AppText.defaultProps = {
-    style: {},
+    textStyle: {},
 };
 
 export default AppText;
