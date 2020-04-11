@@ -30,7 +30,7 @@ const useFetchQuotesList = () => {
         fetchData();
     }, []);
 
-    return [state];
+    return [state, fetchData];
 };
 
 export default useFetchQuotesList;

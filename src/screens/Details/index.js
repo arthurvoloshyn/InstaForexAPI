@@ -9,8 +9,9 @@ import AppText from "../../components/AppText";
 import styles from './styles';
 
 const Details = ({ route }) => {
-    const { symbol, description } = route.params;
-    const [{ data, isError, isLoading }] = useFetchQuote(symbol);
+    const { symbol, description, digits } = route.params;
+    const [{ data, isError, isLoading }, fetchData] = useFetchQuote(symbol);
+    const { ask, bid, change, change24h } = data;
 
     const goBack = () => navigation.goBack();
 
@@ -28,34 +29,29 @@ const Details = ({ route }) => {
 
             <View style={styles.block}>
                 <AppText textStyle={styles.header}>Digits:</AppText>
-                <AppText textStyle={styles.text}>{data['digits']}</AppText>
-            </View>
-
-            <View style={styles.block}>
-                <AppText textStyle={styles.header}>Trade:</AppText>
-                <AppText textStyle={styles.text}>{data['trade']}</AppText>
+                <AppText textStyle={styles.text}>{digits}</AppText>
             </View>
 
             {data.length > 0 && (
                 <View style={styles.data}>
                     <View style={styles.block}>
                         <AppText textStyle={styles.header}>Ask:</AppText>
-                        <AppText textStyle={styles.text}>{data[0]['ask']}</AppText>
+                        <AppText textStyle={styles.text}>{ask}</AppText>
                     </View>
 
                     <View style={styles.block}>
                         <AppText textStyle={styles.header}>Bid:</AppText>
-                        <AppText textStyle={styles.text}>{data[0]['bid']}</AppText>
+                        <AppText textStyle={styles.text}>{bid}</AppText>
                     </View>
 
                     <View style={styles.block}>
                         <AppText textStyle={styles.header}>Change:</AppText>
-                        <AppText textStyle={styles.text}>{data[0]['change']}</AppText>
+                        <AppText textStyle={styles.text}>{change}</AppText>
                     </View>
 
                     <View style={styles.block}>
                         <AppText textStyle={styles.header}>Change 24h:</AppText>
-                        <AppText textStyle={styles.text}>{data[0]['change24h']}</AppText>
+                        <AppText textStyle={styles.text}>{change24h}</AppText>
                     </View>
                 </View>
             )}
@@ -74,6 +70,7 @@ Details.propTypes = {
         params: PropTypes.shape({
             symbol: PropTypes.string,
             description: PropTypes.string,
+            digits: PropTypes.number,
         })
     }),
 };
@@ -83,6 +80,7 @@ Details.defaultProps = {
         params: {
             symbol: '',
             description: '',
+            digits: 0,
         }
     }
 };

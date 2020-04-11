@@ -6,10 +6,10 @@ import useFetchQuotesList from '../../hooks/useFetchQuotesList';
 const QuotesListContext = createContext(initState);
 
 const QuotesListProvider = ({ children }) => {
-  const [state] = useFetchQuotesList();
+  const value = useFetchQuotesList();
 
   return (
-    <QuotesListContext.Provider value={state}>
+    <QuotesListContext.Provider value={value}>
       {children}
     </QuotesListContext.Provider>
   );

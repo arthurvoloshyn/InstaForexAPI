@@ -1,28 +1,49 @@
 import React, { useContext } from 'react';
-import { FlatList, View, ActivityIndicator } from 'react-native';
+import { FlatList, View } from 'react-native';
+import { DANGER_COLOR } from "../../constants/themes";
 import { QuotesListContext } from '../../context/quotesListContext';
 import ErrorIndicator from "../../components/ErrorIndicator";
+import AppButton from "../../components/AppButton";
+import AppLoader from "../../components/AppLoader";
+import EmptyPage from "../../components/EmptyPage";
+import Search from "../../components/Search";
+import Pagination from "../../components/Pagination";
 import Quote from '../../components/Quote';
+import styles from './styles';
 
 const QuotesList = () => {
-    const { data, isError, isLoading } = useContext(QuotesListContext);
+    const [{ data, isError, isLoading }, fetchData] = useContext(QuotesListContext);
 
-    const renderItem = ({ item }) => <Quote symbol={item.symbol} />;
-    const keyExtractor = item => item.symbol;
+    const renderItem = ({ item: { symbol } }) => <Quote symbol={symbol} />;
+    const keyExtractor = ({ symbol }) => symbol;
+    const renderEmpty = () => <EmptyPage />;
+
+    if (isError) {
+        return (
+            <ErrorIndicator>
+                <AppButton onPress={fetchData} backgroundColor={DANGER_COLOR}>Try again</AppButton>
+            </ErrorIndicator>
+        )
+    }
+
+    if (isLoading) return <AppLoader />;
 
     return (
-        <View>
-            {isError && <ErrorIndicator />}
+        <View style={styles.container}>
+            <Search />
 
-            {isLoading ? (
-                <ActivityIndicator size="large" color="#0000ff" />
-            ) : (
+            <View style={styles.quotes}>
                 <FlatList
                     data={data}
+                    onRefresh={fetchData}
+                    refreshing={isLoading}
                     renderItem={renderItem}
                     keyExtractor={keyExtractor}
+                    ListEmptyComponent={renderEmpty}
                 />
-            )}
+            </View>
+
+            <Pagination />
         </View>
     );
 };

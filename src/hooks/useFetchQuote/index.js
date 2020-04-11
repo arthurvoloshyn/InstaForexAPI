@@ -28,7 +28,7 @@ const useFetchQuote = quoteId => {
         fetchData();
     }, []);
 
-    return [state, dispatch];
+    return [state, fetchData];
 };
 
 export default useFetchQuote;
