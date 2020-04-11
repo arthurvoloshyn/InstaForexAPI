@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { FlatList, View, ActivityIndicator } from 'react-native';
-import { QuotesContext } from '../../context/quotesContext';
+import { QuotesListContext } from '../../context/quotesListContext';
 import ErrorIndicator from "../../components/ErrorIndicator";
 import Quote from '../../components/Quote';
 
 const QuotesList = () => {
-    const { data, isError, isLoading } = useContext(QuotesContext);
+    const { data, isError, isLoading } = useContext(QuotesListContext);
 
     const renderItem = ({ item }) => <Quote symbol={item.symbol} />;
     const keyExtractor = item => item.symbol;

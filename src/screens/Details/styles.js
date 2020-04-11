@@ -22,11 +22,12 @@ const styles = StyleSheet.create({
         marginTop: 50,
         width: 100
     },
+    header: {
+        fontSize: 26,
+        fontWeight: 'bold',
+    },
     text: {
         fontSize: 26,
-    },
-    textBold: {
-        fontWeight: 'bold',
     },
 });
 

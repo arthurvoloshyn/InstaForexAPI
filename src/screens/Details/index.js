@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
 import { SECONDARY_COLOR} from "../../constants/themes";
 import useFetchQuote from "../../hooks/useFetchQuote";
@@ -11,59 +12,79 @@ const Details = ({ route }) => {
     const { symbol, description } = route.params;
     const [{ data, isError, isLoading }] = useFetchQuote(symbol);
 
-    const openDetail = useCallback(
-        (symbol, description) => {
-            navigation.navigate('Detail', {symbol, description});
-        },
-        [navigation],
-    );
-
+    const goBack = () => navigation.goBack();
 
     return (
         <View style={styles.container}>
             <View style={styles.block}>
-                <AppText textStyle={[styles.text, styles.textBold]}>Symbol:</AppText>
+                <AppText textStyle={styles.header}>Symbol:</AppText>
                 <AppText textStyle={styles.text}>{symbol}</AppText>
             </View>
+
             <View style={styles.block}>
-                <AppText textStyle={[styles.text, styles.textBold]}>Description:</AppText>
+                <AppText textStyle={styles.header}>Description:</AppText>
                 <AppText textStyle={styles.text}>{description}</AppText>
             </View>
+
             <View style={styles.block}>
-                <AppText textStyle={[styles.text, styles.textBold]}>Digits:</AppText>
+                <AppText textStyle={styles.header}>Digits:</AppText>
                 <AppText textStyle={styles.text}>{data['digits']}</AppText>
             </View>
+
             <View style={styles.block}>
-                <AppText textStyle={[styles.text, styles.textBold]}>Trade:</AppText>
+                <AppText textStyle={styles.header}>Trade:</AppText>
                 <AppText textStyle={styles.text}>{data['trade']}</AppText>
             </View>
+
             {data.length > 0 && (
                 <View style={styles.data}>
                     <View style={styles.block}>
-                        <AppText textStyle={[styles.text, styles.textBold]}>Ask:</AppText>
+                        <AppText textStyle={styles.header}>Ask:</AppText>
                         <AppText textStyle={styles.text}>{data[0]['ask']}</AppText>
                     </View>
+
                     <View style={styles.block}>
-                        <AppText textStyle={[styles.text, styles.textBold]}>Bid:</AppText>
+                        <AppText textStyle={styles.header}>Bid:</AppText>
                         <AppText textStyle={styles.text}>{data[0]['bid']}</AppText>
                     </View>
+
                     <View style={styles.block}>
-                        <AppText textStyle={[styles.text, data.textBold]}>Change:</AppText>
+                        <AppText textStyle={styles.header}>Change:</AppText>
                         <AppText textStyle={styles.text}>{data[0]['change']}</AppText>
                     </View>
+
                     <View style={styles.block}>
-                        <AppText textStyle={[styles.text, styles.textBold]}>Change 24h:</AppText>
+                        <AppText textStyle={styles.header}>Change 24h:</AppText>
                         <AppText textStyle={styles.text}>{data[0]['change24h']}</AppText>
                     </View>
                 </View>
             )}
+
             <View style={styles.button}>
-                <AppButton color={SECONDARY_COLOR} onPress={() => {}}>
-                    <AntDesign name="back" size={40}/>
+                <AppButton color={SECONDARY_COLOR} onPress={goBack}>
+                    <AntDesign name="back" size={40} />
                 </AppButton>
             </View>
         </View>
     )
+};
+
+Details.propTypes = {
+    route: PropTypes.shape({
+        params: PropTypes.shape({
+            symbol: PropTypes.string,
+            description: PropTypes.string,
+        })
+    }),
+};
+
+Details.defaultProps = {
+    route: {
+        params: {
+            symbol: '',
+            description: '',
+        }
+    }
 };
 
 export default Details;
