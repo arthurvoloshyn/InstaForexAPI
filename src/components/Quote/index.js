@@ -4,22 +4,34 @@ import PropTypes from 'prop-types';
 import AppText from "../AppText";
 import styles from './styles';
 
-const Quote = ({ symbol, onPress }) => (
-    <TouchableOpacity onPress={onPress}>
-        <View style={styles.quote}>
-            <AppText textStyle={styles.text}>{symbol}</AppText>
-        </View>
-    </TouchableOpacity>
-);
+const Quote = ({ item: { symbol, description, digits }, onPress }) => {
+    const onPressHandler = () => onPress(symbol, description, digits);
+
+    return (
+        <TouchableOpacity onPress={onPressHandler}>
+            <View style={styles.quote}>
+                <AppText textStyle={styles.text}>{symbol}</AppText>
+            </View>
+        </TouchableOpacity>
+    );
+};
 
 Quote.propTypes = {
-    symbol: PropTypes.string,
-    onPress: PropTypes.func
+    item: PropTypes.shape({
+        symbol: PropTypes.string,
+        description: PropTypes.string,
+        digits: PropTypes.number,
+    }),
+    onPress: PropTypes.func,
 };
 
 Quote.defaultProps = {
-    symbol: '',
-    onPress: () => {}
+    item: {
+        symbol: '',
+        description: '',
+        digits: 0,
+    },
+    onPress: () => {},
 };
 
 export default Quote;

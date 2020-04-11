@@ -8,7 +8,7 @@ import AppButton from "../../components/AppButton";
 import AppText from "../../components/AppText";
 import styles from './styles';
 
-const Details = ({ route }) => {
+const Details = ({ route, navigation }) => {
     const { symbol, description, digits } = route.params;
     const [{ data, isError, isLoading }, fetchData] = useFetchQuote(symbol);
     const { ask, bid, change, change24h } = data;

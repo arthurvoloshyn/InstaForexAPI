@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { FlatList, View } from 'react-native';
+import { DETAILS_SCREEN } from '../../constants/routes'
 import { DANGER_COLOR } from "../../constants/themes";
 import { QuotesListContext } from '../../context/quotesListContext';
 import ErrorIndicator from "../../components/ErrorIndicator";
@@ -11,10 +12,12 @@ import Pagination from "../../components/Pagination";
 import Quote from '../../components/Quote';
 import styles from './styles';
 
-const QuotesList = () => {
+const QuotesList = ({ navigation }) => {
     const [{ data, isError, isLoading }, fetchData] = useContext(QuotesListContext);
 
-    const renderItem = ({ item: { symbol } }) => <Quote symbol={symbol} />;
+    const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
+
+    const renderItem = ({ item }) => <Quote item={item} onPress={openDetails} />;
     const keyExtractor = ({ symbol }) => symbol;
     const renderEmpty = () => <EmptyPage />;
 
