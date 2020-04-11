@@ -3,7 +3,7 @@ import { PRIMARY_COLOR } from "../../constants/themes";
 import { isIOS } from "../../services/detectDevice";
 
 const styles = StyleSheet.create({
-    navbar: {
+    nav: {
         height: 50,
         alignItems: 'center',
         justifyContent: 'flex-end',

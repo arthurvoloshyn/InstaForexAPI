@@ -5,7 +5,7 @@ import AppText from '../AppText';
 import styles from './styles';
 
 const NavBar = ({ title }) => (
-    <View style={styles.navbar}>
+    <View style={styles.nav}>
         <AppText textStyle={styles.text}>{title}</AppText>
     </View>
 );
@@ -19,5 +19,3 @@ NavBar.defaultProps = {
 };
 
 export default NavBar;
-
-
