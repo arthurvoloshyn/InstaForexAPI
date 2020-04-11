@@ -14,12 +14,12 @@ const Quote = ({ symbol, onPress }) => (
 
 Quote.propTypes = {
     symbol: PropTypes.string,
-    onOpen: PropTypes.func
+    onPress: PropTypes.func
 };
 
 Quote.defaultProps = {
-    quote: '',
-    onOpen: () => {}
+    symbol: '',
+    onPress: () => {}
 };
 
 export default Quote;
