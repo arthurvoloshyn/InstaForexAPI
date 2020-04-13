@@ -10,24 +10,9 @@ const styles = StyleSheet.create({
         width: '100%',
         alignItems: 'center'
     },
-    block: {
-        width: '95%',
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        marginBottom: 10
-    },
     button: {
         marginTop: 50,
         width: 100
-    },
-    header: {
-        fontSize: 26,
-        fontWeight: 'bold',
-    },
-    text: {
-        fontSize: 26,
     },
 });
 

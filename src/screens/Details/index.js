@@ -3,17 +3,20 @@ import { View } from 'react-native';
 import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
 import { DANGER_COLOR, SECONDARY_COLOR } from "../../constants/themes";
+import { SECONDARY_DETAILS_LIST, PRIMARY_DETAILS_LIST } from "../../constants/lists";
+import { getDataListWithValues } from "../../utils";
 import useFetchQuote from "../../hooks/useFetchQuote";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from "../../components/AppLoader";
 import AppButton from "../../components/AppButton";
-import AppText from "../../components/AppText";
+import Row from "../../components/Row";
 import styles from './styles';
 
 const Details = ({ route, navigation }) => {
-    const { symbol, description, digits } = route.params;
+    const { symbol } = route.params;
     const [{ data, isError, isLoading }, fetchData] = useFetchQuote(symbol);
-    const { ask, bid, change, change24h } = data;
+    const primaryDetailsList = getDataListWithValues(PRIMARY_DETAILS_LIST, route.params);
+    const secondaryDetailsList = getDataListWithValues(SECONDARY_DETAILS_LIST, data);
 
     const goBack = () => navigation.goBack();
 
@@ -29,42 +32,15 @@ const Details = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
-            <View style={styles.block}>
-                <AppText textStyle={styles.header}>Symbol:</AppText>
-                <AppText textStyle={styles.text}>{symbol}</AppText>
-            </View>
+            {primaryDetailsList.map(({ title, value }) => (
+                <Row key={title} title={title} value={value} />
+            ))}
 
-            <View style={styles.block}>
-                <AppText textStyle={styles.header}>Description:</AppText>
-                <AppText textStyle={styles.text}>{description}</AppText>
-            </View>
-
-            <View style={styles.block}>
-                <AppText textStyle={styles.header}>Digits:</AppText>
-                <AppText textStyle={styles.text}>{digits}</AppText>
-            </View>
-
-            {data.length > 0 && (
+            {data && (
                 <View style={styles.data}>
-                    <View style={styles.block}>
-                        <AppText textStyle={styles.header}>Ask:</AppText>
-                        <AppText textStyle={styles.text}>{ask}</AppText>
-                    </View>
-
-                    <View style={styles.block}>
-                        <AppText textStyle={styles.header}>Bid:</AppText>
-                        <AppText textStyle={styles.text}>{bid}</AppText>
-                    </View>
-
-                    <View style={styles.block}>
-                        <AppText textStyle={styles.header}>Change:</AppText>
-                        <AppText textStyle={styles.text}>{change}</AppText>
-                    </View>
-
-                    <View style={styles.block}>
-                        <AppText textStyle={styles.header}>Change 24h:</AppText>
-                        <AppText textStyle={styles.text}>{change24h}</AppText>
-                    </View>
+                    {secondaryDetailsList.map(({ title, value }) => (
+                        <Row key={title} title={title} value={value} />
+                    ))}
                 </View>
             )}
 
