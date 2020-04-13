@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     header: {
-        fontSize: 26,
         fontWeight: 'bold',
     },
     text: {
