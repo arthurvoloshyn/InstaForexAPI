@@ -2,8 +2,10 @@ import React from 'react';
 import { View } from 'react-native';
 import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
-import { SECONDARY_COLOR} from "../../constants/themes";
+import { DANGER_COLOR, SECONDARY_COLOR } from "../../constants/themes";
 import useFetchQuote from "../../hooks/useFetchQuote";
+import ErrorIndicator from "../../components/ErrorIndicator";
+import AppLoader from "../../components/AppLoader";
 import AppButton from "../../components/AppButton";
 import AppText from "../../components/AppText";
 import styles from './styles';
@@ -14,6 +16,16 @@ const Details = ({ route, navigation }) => {
     const { ask, bid, change, change24h } = data;
 
     const goBack = () => navigation.goBack();
+
+    if (isError) {
+        return (
+            <ErrorIndicator>
+                <AppButton onPress={fetchData} backgroundColor={DANGER_COLOR}>Try again</AppButton>
+            </ErrorIndicator>
+        )
+    }
+
+    if (isLoading) return <AppLoader />;
 
     return (
         <View style={styles.container}>
