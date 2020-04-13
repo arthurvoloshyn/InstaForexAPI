@@ -13,13 +13,13 @@ const Navigation = () => (
             <Stack.Screen
                 name={HOME_SCREEN}
                 component={QuotesList}
-                options={{title: 'Quotes'}}
+                options={{ title: 'InstaForex' }}
             />
 
             <Stack.Screen
                 name={DETAILS_SCREEN}
                 component={Details}
-                options={({route}) => ({title: route.params.symbol})}
+                options={({ route: { params: { symbol } }}) => ({ title: symbol })}
             />
         </Stack.Navigator>
     </NavigationContainer>
