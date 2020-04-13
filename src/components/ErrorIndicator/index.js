@@ -7,7 +7,6 @@ import styles from './styles';
 const ErrorIndicator = ({ children }) => (
     <View style={styles.error}>
         <AppText textStyle={styles.text}>Something went wrong!</AppText>
-
         {children}
     </View>
 );
