@@ -23,7 +23,7 @@ const Details = ({ route, navigation }) => {
     if (isError) {
         return (
             <ErrorIndicator>
-                <AppButton onPress={fetchData} backgroundColor={DANGER_COLOR}>Try again</AppButton>
+                <AppButton backgroundColor={DANGER_COLOR} onPress={fetchData}>Try again</AppButton>
             </ErrorIndicator>
         )
     }
@@ -45,7 +45,7 @@ const Details = ({ route, navigation }) => {
             )}
 
             <View style={styles.button}>
-                <AppButton color={SECONDARY_COLOR} onPress={goBack}>
+                <AppButton backgroundColor={SECONDARY_COLOR} onPress={goBack}>
                     <AntDesign name="back" size={40} />
                 </AppButton>
             </View>
@@ -61,6 +61,9 @@ Details.propTypes = {
             digits: PropTypes.number,
         })
     }),
+    navigation: PropTypes.shape({
+        goBack: PropTypes.func,
+    }),
 };
 
 Details.defaultProps = {
@@ -70,7 +73,10 @@ Details.defaultProps = {
             description: '',
             digits: 0,
         }
-    }
+    },
+    navigation: {
+        goBack: () => {},
+    },
 };
 
 export default Details;

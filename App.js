@@ -3,8 +3,8 @@ import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
 import { QuotesListProvider } from './src/context/quotesListContext';
-import Navigation from "./src/navigation";
 import ErrorBoundary from "./src/components/ErrorBoundary";
+import Main from "./src/layouts/Main";
 
 const App = () => {
     const [fontsLoaded] = useFonts({
@@ -16,7 +16,7 @@ const App = () => {
     return (
         <ErrorBoundary>
             <QuotesListProvider>
-                <Navigation />
+                <Main />
             </QuotesListProvider>
         </ErrorBoundary>
     );

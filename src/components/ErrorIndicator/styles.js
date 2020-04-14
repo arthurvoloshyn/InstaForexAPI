@@ -5,12 +5,12 @@ const styles = StyleSheet.create({
     error: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     text: {
         fontSize: 20,
         color: DANGER_COLOR,
-        marginBottom: 20
+        marginBottom: 20,
     },
 });
 

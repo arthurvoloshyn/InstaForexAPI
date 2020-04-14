@@ -12,8 +12,8 @@ const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity
 
     const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
 
-    const nextPage = () => onPress(NEXT);
     const prevPage = () => onPress(PREV);
+    const nextPage = () => onPress(NEXT);
 
     const isFirstPage = currentPage === FIRST_PAGE;
     const isLastPage = currentPage === totalPages;
@@ -25,7 +25,7 @@ const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity
             </Wrapper>
 
             <View style={[styles.pagination, styles.body]}>
-                <AppText textStyle={styles.text}>{currentPage} of {totalPages}</AppText>
+                <AppText style={styles.text}>{currentPage} of {totalPages}</AppText>
             </View>
 
             <Wrapper onPress={nextPage} activeOpacity={activeOpacity} disabled={isLastPage}>

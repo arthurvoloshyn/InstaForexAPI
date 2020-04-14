@@ -6,7 +6,7 @@ import styles from './styles';
 
 const Row = ({ title, value }) => (
     <View style={styles.block}>
-        <AppText textStyle={styles.text}>
+        <AppText style={styles.text}>
             <Text style={styles.header}>{title}:</Text>{' '}
             {value}
         </AppText>

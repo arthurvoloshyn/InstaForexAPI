@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { FlatList, View } from 'react-native';
+import PropTypes from 'prop-types';
 import { DETAILS_SCREEN } from '../../constants/routes'
 import { DANGER_COLOR } from "../../constants/themes";
 import { QuotesListContext } from '../../context/quotesListContext';
@@ -17,14 +18,16 @@ const QuotesList = ({ navigation }) => {
 
     const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
 
-    const renderItem = ({ item }) => <Quote item={item} onPress={openDetails} />;
+    const renderItem = ({ item: { symbol, description, digits } }) => (
+        <Quote symbol={symbol} description={description} digits={digits} onPress={openDetails} />
+    );
     const keyExtractor = ({ symbol }) => symbol;
     const renderEmpty = () => <EmptyPage />;
 
     if (isError) {
         return (
             <ErrorIndicator>
-                <AppButton onPress={fetchData} backgroundColor={DANGER_COLOR}>Try again</AppButton>
+                <AppButton backgroundColor={DANGER_COLOR} onPress={fetchData}>Try again</AppButton>
             </ErrorIndicator>
         )
     }
@@ -49,6 +52,18 @@ const QuotesList = ({ navigation }) => {
             <Pagination />
         </View>
     );
+};
+
+QuotesList.propTypes = {
+    navigation: PropTypes.shape({
+        navigate: PropTypes.func,
+    }),
+};
+
+QuotesList.defaultProps = {
+    navigation: {
+        navigate: () => {},
+    },
 };
 
 export default QuotesList;

@@ -5,3 +5,7 @@ const { width, height } = Dimensions.get('window');
 
 export const deviceWidth = width - PADDING_HORIZONTAL * 2;
 export const deviceHeight = Math.round(height);
+
+export const quoteHeight = 72;
+export const navigationalElementsHeight = 280;
+export const quotesPerPage = Math.floor((deviceHeight - navigationalElementsHeight) / quoteHeight);
