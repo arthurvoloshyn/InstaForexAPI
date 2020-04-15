@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { DETAILS_SCREEN } from '../../constants/routes'
 import { DANGER_COLOR } from "../../constants/themes";
 import { QuotesListContext } from '../../context/quotesListContext';
+import usePagination from "../../hooks/usePagination";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppButton from "../../components/AppButton";
 import AppLoader from "../../components/AppLoader";
@@ -15,6 +16,7 @@ import styles from './styles';
 
 const QuotesList = ({ navigation }) => {
     const [{ data, isError, isLoading }, fetchData] = useContext(QuotesListContext);
+    const [currentPage, paginate, totalPages, currentQuotesList] = usePagination(data);
 
     const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
 
@@ -40,7 +42,7 @@ const QuotesList = ({ navigation }) => {
 
             <View style={styles.quotes}>
                 <FlatList
-                    data={data}
+                    data={currentQuotesList}
                     onRefresh={fetchData}
                     refreshing={isLoading}
                     renderItem={renderItem}
@@ -49,7 +51,11 @@ const QuotesList = ({ navigation }) => {
                 />
             </View>
 
-            <Pagination />
+            <Pagination
+                totalPages={totalPages}
+                currentPage={currentPage}
+                onPress={paginate}
+            />
         </View>
     );
 };

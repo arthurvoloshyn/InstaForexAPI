@@ -19,11 +19,12 @@ const Details = ({ route, navigation }) => {
     const secondaryDetailsList = getDataListWithValues(SECONDARY_DETAILS_LIST, data);
 
     const goBack = () => navigation.goBack();
+    const tryAgain = () => fetchData(symbol);
 
     if (isError) {
         return (
             <ErrorIndicator>
-                <AppButton backgroundColor={DANGER_COLOR} onPress={fetchData}>Try again</AppButton>
+                <AppButton backgroundColor={DANGER_COLOR} onPress={tryAgain}>Try again</AppButton>
             </ErrorIndicator>
         )
     }

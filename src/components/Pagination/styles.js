@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     },
     pagination: {
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     body: {

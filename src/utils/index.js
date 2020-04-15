@@ -1,5 +1,5 @@
 export const encodeSeparatedFields = fields => {
-    const separatedFields = fields.join(',');
+    const separatedFields = fields.join();
 
     return encodeURIComponent(separatedFields);
 };
@@ -33,4 +33,14 @@ export const getDataListWithValues = (list = [], data) => {
                 return { ...item };
         }
     });
+};
+
+export const getDataForCurrentPage = (currentPage, dataList, listsPerPage) => {
+    const indexOfLastItem = currentPage * listsPerPage;
+    const indexOfFirstItem = indexOfLastItem - listsPerPage;
+
+    const totalPages = Math.ceil(dataList.length / listsPerPage);
+    const currentDataList = dataList.slice(indexOfFirstItem, indexOfLastItem);
+
+    return [totalPages, currentDataList];
 };

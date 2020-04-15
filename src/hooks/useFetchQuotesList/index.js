@@ -1,8 +1,8 @@
 import { useEffect, useReducer } from "react";
 import { BASE_PATH, QUOTES_LIST, FIELDS_PARAM } from '../../constants/paths';
+import { encodeSeparatedFields, sortBySymbol } from "../../utils";
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
-import { encodeSeparatedFields, sortBySymbol } from "../../utils";
 
 const useFetchQuotesList = () => {
     const [state, dispatch] = useReducer(dataFetchReducer, initState);
