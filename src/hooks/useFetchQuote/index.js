@@ -18,7 +18,7 @@ const useFetchQuote = quoteId => {
             const result = await fetch(`${BASE_PATH}${QUOTES_TICK}?${FIELDS_PARAM}${encodedSeparatedFields}&${INSTRUMENTS_PARAM}${query}`);
             const data = await result.json();
 
-            dispatch(fetchSuccess(data[0]));
+            dispatch(fetchSuccess(data));
         } catch {
             dispatch(fetchFailure());
         }

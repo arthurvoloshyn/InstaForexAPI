@@ -6,10 +6,6 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         paddingTop: 20
     },
-    data: {
-        width: '100%',
-        alignItems: 'center'
-    },
     button: {
         marginTop: 50,
         width: 100

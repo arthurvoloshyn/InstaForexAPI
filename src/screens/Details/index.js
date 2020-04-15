@@ -3,8 +3,7 @@ import { View } from 'react-native';
 import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
 import { DANGER_COLOR, SECONDARY_COLOR } from "../../constants/themes";
-import { SECONDARY_DETAILS_LIST, PRIMARY_DETAILS_LIST } from "../../constants/lists";
-import { getDataListWithValues } from "../../utils";
+import { getDetailsList } from '../../services/getDetailsList';
 import useFetchQuote from "../../hooks/useFetchQuote";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from "../../components/AppLoader";
@@ -15,8 +14,8 @@ import styles from './styles';
 const Details = ({ route, navigation }) => {
     const { symbol } = route.params;
     const [{ data, isError, isLoading }, fetchData] = useFetchQuote(symbol);
-    const primaryDetailsList = getDataListWithValues(PRIMARY_DETAILS_LIST, route.params);
-    const secondaryDetailsList = getDataListWithValues(SECONDARY_DETAILS_LIST, data);
+
+    const detailsList = getDetailsList(route.params, data[0]);
 
     const goBack = () => navigation.goBack();
     const tryAgain = () => fetchData(symbol);
@@ -33,17 +32,9 @@ const Details = ({ route, navigation }) => {
 
     return (
         <View style={styles.container}>
-            {primaryDetailsList.map(({ title, value }) => (
+            {detailsList.map(({ title, value }) => (
                 <Row key={title} title={title} value={value} />
             ))}
-
-            {data && (
-                <View style={styles.data}>
-                    {secondaryDetailsList.map(({ title, value }) => (
-                        <Row key={title} title={title} value={value} />
-                    ))}
-                </View>
-            )}
 
             <View style={styles.button}>
                 <AppButton backgroundColor={SECONDARY_COLOR} onPress={goBack}>
