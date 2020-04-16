@@ -12,8 +12,8 @@ const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity
 
     const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
 
-    const prevPage = () => onPress(PREV);
-    const nextPage = () => onPress(NEXT);
+    const prevPage = () => !isFirstPage && onPress(PREV);
+    const nextPage = () => !isLastPage && onPress(NEXT);
 
     const isFirstPage = currentPage === FIRST_PAGE;
     const isLastPage = currentPage === totalPages;
