@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
 import { DANGER_COLOR, SECONDARY_COLOR } from "../../constants/themes";
 import { getDetailsList } from '../../services/getDetailsList';
-import { QuoteContext } from "../../context/quoteContext";
+import { QuoteContext } from "../../contextes/quoteContext";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from "../../components/AppLoader";
 import AppButton from "../../components/AppButton";

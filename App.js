@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
-import MainProvider from './src/context/mainContext';
+import MainProvider from './src/contextes/mainContext';
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import Main from "./src/layouts/Main";
 import robotoRegularFont from './assets/fonts/Roboto-Regular.ttf';
