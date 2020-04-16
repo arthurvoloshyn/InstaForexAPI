@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import { NEXT, PREV } from '../../constants/pagination';
-import { quotesPerPage } from "../../services/getDeviceSize";
-import { getDataForCurrentPage } from '../../utils';
 
-const usePagination = quotesList => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, currentQuotesList] = getDataForCurrentPage(currentPage, quotesList, quotesPerPage);
+const usePagination = initialPage => {
+  const [currentPage, setCurrentPage] = useState(initialPage);
 
   const paginate = operator => {
     if (operator === NEXT) {
@@ -15,7 +12,7 @@ const usePagination = quotesList => {
     }
   };
 
-  return [currentPage, paginate, totalPages, currentQuotesList];
+  return [currentPage, paginate];
 };
 
 export default usePagination;
