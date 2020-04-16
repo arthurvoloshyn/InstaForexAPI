@@ -21,8 +21,15 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "sdkVersion": "XX.0.0",
     "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
     }
   }
 }
