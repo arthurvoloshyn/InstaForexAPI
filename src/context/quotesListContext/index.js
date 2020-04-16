@@ -8,26 +8,27 @@ import useFetchQuotesList from '../../hooks/useFetchQuotesList';
 import useSearch from "../../hooks/useSearch";
 import usePagination from "../../hooks/usePagination";
 
-const defaultQuotesList = {
+const initContextValue = {
   ...initState,
   totalPages: 1,
-  currentPage: 1,
+  currentPage: FIRST_PAGE,
   search: '',
   updateSearch: () => {},
   fetchData: () => {},
   paginate: () => {},
 };
 
-const QuotesListContext = createContext(defaultQuotesList);
+const QuotesListContext = createContext(initContextValue);
 
 const QuotesListProvider = ({ children }) => {
+  const { currentPage: initPage, search: initSearch } = initContextValue;
   const [{ data: quotesList, isError, isLoading }, fetchData] = useFetchQuotesList();
 
-  const [search, updateSearch] = useSearch('');
+  const [search, updateSearch] = useSearch(initSearch);
   const foundQuotes = findQuotes(search, quotesList);
   const currentQuotesList = search ? foundQuotes : quotesList;
 
-  const [currentPage, paginate] = usePagination(FIRST_PAGE);
+  const [currentPage, paginate] = usePagination(initPage);
   const [totalPages, data] = getDataForCurrentPage(currentPage, currentQuotesList, quotesPerPage);
 
   const value = {

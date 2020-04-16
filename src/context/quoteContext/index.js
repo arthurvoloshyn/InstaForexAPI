@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { initState } from '../../reducers/dataFetchReducer';
 import useFetchQuote from "../../hooks/useFetchQuote";
 
-const defaultQuote = {
+const initContextValue = {
     ...initState,
     fetchData: () => {},
 };
 
-const QuoteContext = createContext(defaultQuote);
+const QuoteContext = createContext(initContextValue);
 
 const QuoteProvider = ({ children }) => {
     const [{ data, isError, isLoading }, fetchData] = useFetchQuote();
