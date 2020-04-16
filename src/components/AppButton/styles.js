@@ -11,7 +11,6 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#fff',
-        fontWeight: 'bold',
     },
 });
 

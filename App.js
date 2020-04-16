@@ -6,10 +6,12 @@ import MainProvider from './src/context/mainContext';
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import Main from "./src/layouts/Main";
 import robotoRegularFont from './assets/fonts/Roboto-Regular.ttf';
+import robotoBoldFont from './assets/fonts/Roboto-Bold.ttf';
 
 const App = () => {
     const [fontsLoaded] = useFonts({
         'roboto-regular': robotoRegularFont,
+        'roboto-bold': robotoBoldFont,
     });
 
     if (!fontsLoaded) return <AppLoading />;

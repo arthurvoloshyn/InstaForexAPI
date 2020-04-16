@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     header: {
-        fontWeight: 'bold',
+        fontFamily: 'roboto-bold',
     },
     text: {
         fontSize: 26,

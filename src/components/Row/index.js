@@ -14,7 +14,7 @@ const Row = ({ title, value }) => (
 );
 
 Row.propTypes = {
-    title: PropTypes.string,
+    title: PropTypes.string.isRequired,
     value: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
@@ -22,8 +22,7 @@ Row.propTypes = {
 };
 
 Row.defaultProps = {
-    title: '',
-    value: '',
+    value: 'Unknown',
 };
 
 export default Row;

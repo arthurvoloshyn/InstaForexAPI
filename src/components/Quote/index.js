@@ -10,7 +10,7 @@ const Quote = ({ symbol, description, digits, onPress }) => {
     return (
         <TouchableOpacity onPress={onPressHandler}>
             <View style={styles.quote}>
-                <AppText style={styles.text}>{symbol}</AppText>
+                <AppText bold style={styles.text}>{symbol}</AppText>
             </View>
         </TouchableOpacity>
     );

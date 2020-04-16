@@ -1,18 +1,23 @@
 import React from "react";
 import { Text } from "react-native";
 import PropTypes from "prop-types";
-import styles from './styles';
 
-const AppText = ({ style, children, ...attrs }) => (
-    <Text style={[styles.text, style]} {...attrs}>{children}</Text>
-);
+const AppText = ({ style, children, bold, ...attrs }) => {
+    const textStyles = { fontFamily: bold ? 'roboto-bold' : 'roboto-regular' };
+
+    return (
+        <Text style={[textStyles, style]} {...attrs}>{children}</Text>
+    );
+};
 
 AppText.propTypes = {
     children: PropTypes.node.isRequired,
-    style: Text.propTypes.style
+    bold: PropTypes.bool,
+    style: Text.propTypes.style,
 };
 
 AppText.defaultProps = {
+    bold: false,
     style: {},
 };
 
