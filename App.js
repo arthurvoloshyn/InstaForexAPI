@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
-import React from 'react';
+import React from 'react';x
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
-import MainProvider from './src/context/MainContext';
+import MainProvider from './src/context/mainContext';
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import Main from "./src/layouts/Main";
 
