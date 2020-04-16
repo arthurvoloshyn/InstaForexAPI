@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { View } from 'react-native';
 import PropTypes from "prop-types";
 import { AntDesign } from '@expo/vector-icons';
 import { DANGER_COLOR, SECONDARY_COLOR } from "../../constants/themes";
 import { getDetailsList } from '../../services/getDetailsList';
-import useFetchQuote from "../../hooks/useFetchQuote";
+import { QuoteContext } from "../../context/quoteContext";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppLoader from "../../components/AppLoader";
 import AppButton from "../../components/AppButton";
@@ -12,8 +12,12 @@ import Row from "../../components/Row";
 import styles from './styles';
 
 const Details = ({ route, navigation }) => {
+    const { data, isError, isLoading, fetchData } = useContext(QuoteContext);
     const { symbol } = route.params;
-    const [{ data, isError, isLoading }, fetchData] = useFetchQuote(symbol);
+
+    useEffect(() => {
+        fetchData(symbol);
+    }, []);
 
     const detailsList = getDetailsList(route.params, data[0]);
 
@@ -49,8 +53,6 @@ Details.propTypes = {
     route: PropTypes.shape({
         params: PropTypes.shape({
             symbol: PropTypes.string,
-            description: PropTypes.string,
-            digits: PropTypes.number,
         })
     }),
     navigation: PropTypes.shape({
@@ -62,8 +64,6 @@ Details.defaultProps = {
     route: {
         params: {
             symbol: '',
-            description: '',
-            digits: 0,
         }
     },
     navigation: {

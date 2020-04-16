@@ -1,10 +1,10 @@
-import { useEffect, useReducer } from "react";
+import { useReducer } from "react";
 import { BASE_PATH, FIELDS_PARAM, QUOTES_TICK, INSTRUMENTS_PARAM } from '../../constants/paths';
 import { encodeSeparatedFields, encodeSymbol } from "../../utils";
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
-const useFetchQuote = quoteId => {
+const useFetchQuote = () => {
     const [state, dispatch] = useReducer(dataFetchReducer, initState);
 
     const fetchData = async quoteId => {
@@ -23,10 +23,6 @@ const useFetchQuote = quoteId => {
             dispatch(fetchFailure());
         }
     };
-
-    useEffect(() => {
-        fetchData(quoteId);
-    }, []);
 
     return [state, fetchData];
 };

@@ -2,22 +2,23 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
-import { QuotesListProvider } from './src/context/quotesListContext';
+import MainProvider from './src/context/MainContext';
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import Main from "./src/layouts/Main";
 
 const App = () => {
+    const fontSource = require('./assets/fonts/Roboto-Regular.ttf');
     const [fontsLoaded] = useFonts({
-        'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
+        'roboto-regular': fontSource,
     });
 
     if (!fontsLoaded) return <AppLoading />;
 
     return (
         <ErrorBoundary>
-            <QuotesListProvider>
+            <MainProvider>
                 <Main />
-            </QuotesListProvider>
+            </MainProvider>
         </ErrorBoundary>
     );
 };
