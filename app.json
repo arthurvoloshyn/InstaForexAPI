@@ -21,14 +21,14 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "sdkVersion": "XX.0.0",
+    "sdkVersion": "37.0.0",
     "ios": {
-      "bundleIdentifier": "com.yourcompany.yourappname",
+      "bundleIdentifier": "com.arturvoloshyn.instaforexapi",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.yourcompany.yourappname",
+      "package": "com.arturvoloshyn.instaforexapi",
       "versionCode": 1
     }
   }
