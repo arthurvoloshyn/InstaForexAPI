@@ -44,3 +44,10 @@ export const getDataForCurrentPage = (currentPage, dataList, listsPerPage) => {
 
     return [totalPages, currentDataList];
 };
+
+export const findQuotes = (search, quotesList) => quotesList.filter(({ symbol }) => {
+    const itemData = symbol.toUpperCase();
+    const textData = search.toUpperCase();
+
+    return itemData.match(textData);
+});
