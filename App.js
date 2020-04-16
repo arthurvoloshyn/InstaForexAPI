@@ -5,11 +5,11 @@ import { AppLoading } from 'expo';
 import MainProvider from './src/context/mainContext';
 import ErrorBoundary from "./src/components/ErrorBoundary";
 import Main from "./src/layouts/Main";
+import robotoRegularFont from './assets/fonts/Roboto-Regular.ttf';
 
 const App = () => {
-    const fontSource = require('./assets/fonts/Roboto-Regular.ttf');
     const [fontsLoaded] = useFonts({
-        'roboto-regular': fontSource,
+        'roboto-regular': robotoRegularFont,
     });
 
     if (!fontsLoaded) return <AppLoading />;
