@@ -3,11 +3,7 @@ import { FlatList, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { DETAILS_SCREEN } from '../../constants/routes'
 import { DANGER_COLOR } from "../../constants/themes";
-import { FIRST_PAGE } from "../../constants/pagination";
-import { getDataForCurrentPage } from "../../utils";
-import { quotesPerPage } from "../../services/getDeviceSize";
 import { QuotesListContext } from '../../context/quotesListContext';
-import usePagination from "../../hooks/usePagination";
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppButton from "../../components/AppButton";
 import AppLoader from "../../components/AppLoader";
@@ -18,9 +14,7 @@ import Quote from '../../components/Quote';
 import styles from './styles';
 
 const QuotesList = ({ navigation }) => {
-    const [{ data, isError, isLoading }, fetchData] = useContext(QuotesListContext);
-    const [currentPage, paginate] = usePagination(FIRST_PAGE);
-    const [totalPages, currentQuotesList] = getDataForCurrentPage(currentPage, data, quotesPerPage);
+    const { data, isError, isLoading, currentPage, totalPages, fetchData, paginate } = useContext(QuotesListContext);
 
     const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
 
@@ -46,7 +40,7 @@ const QuotesList = ({ navigation }) => {
 
             <View style={styles.quotes}>
                 <FlatList
-                    data={currentQuotesList}
+                    data={data}
                     onRefresh={fetchData}
                     refreshing={isLoading}
                     renderItem={renderItem}
