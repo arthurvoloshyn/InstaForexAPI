@@ -3,6 +3,7 @@ import { FlatList, View } from 'react-native';
 import PropTypes from 'prop-types';
 import { DETAILS_SCREEN } from '../../constants/routes'
 import { DANGER_COLOR } from "../../constants/themes";
+import { GO_TO_FIRST_PAGE, FIRST_PAGE } from "../../constants/pagination";
 import { QuotesListContext } from '../../contextes/quotesListContext';
 import ErrorIndicator from "../../components/ErrorIndicator";
 import AppButton from "../../components/AppButton";
@@ -17,6 +18,10 @@ const QuotesList = ({ navigation }) => {
     const { data, isError, isLoading, currentPage, totalPages, search, updateSearch, fetchData, paginate } = useContext(QuotesListContext);
 
     const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
+    const handleSearch = text => {
+        updateSearch(text);
+        currentPage !== FIRST_PAGE && paginate(GO_TO_FIRST_PAGE);
+    };
 
     const renderItem = ({ item: { symbol, description, digits } }) => (
         <Quote symbol={symbol} description={description} digits={digits} onPress={openDetails} />
@@ -36,7 +41,7 @@ const QuotesList = ({ navigation }) => {
 
     return (
         <View style={styles.container}>
-            <Search onChangeText={updateSearch} value={search} />
+            <Search onChangeText={handleSearch} value={search} />
 
             <View style={styles.quotes}>
                 <FlatList
