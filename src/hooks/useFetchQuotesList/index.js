@@ -5,7 +5,8 @@ import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
 const useFetchQuotesList = () => {
-    const [state, dispatch] = useReducer(dataFetchReducer, initState);
+    const [{ isLoading, isError, data }, dispatch] = useReducer(dataFetchReducer, initState);
+    const state = { isLoading, isError, data };
 
     const fetchData = async () => {
         dispatch(fetchInit());
