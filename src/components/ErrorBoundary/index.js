@@ -4,7 +4,7 @@ import ErrorIndicator from "../ErrorIndicator";
 
 class ErrorBoundary extends Component {
   static propTypes = {
-    children: PropTypes.node.isRequired
+    children: PropTypes.node.isRequired,
   };
 
   state = {
