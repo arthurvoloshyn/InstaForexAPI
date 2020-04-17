@@ -14,7 +14,7 @@ import Quote from '../../components/Quote';
 import styles from './styles';
 
 const QuotesList = ({ navigation }) => {
-    const { data, isError, isLoading, currentPage, totalPages, search, updateSearch, fetchData, paginate } = useContext(QuotesListContext);
+    const { data, isError, isLoading, page, totalPages, search, updateSearch, fetchData, paginate } = useContext(QuotesListContext);
 
     const openDetails = (symbol, description, digits) => navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
 
@@ -51,7 +51,7 @@ const QuotesList = ({ navigation }) => {
 
             <Pagination
                 totalPages={totalPages}
-                currentPage={currentPage}
+                currentPage={page}
                 onPress={paginate}
             />
         </View>

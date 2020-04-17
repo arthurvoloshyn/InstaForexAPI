@@ -1,9 +1,8 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
-import { FIRST_PAGE } from "../../constants/pagination";
 import { findQuotes, getDataForCurrentPage } from "../../utils";
 import { quotesPerPage } from "../../services/getDeviceSize";
-import { initState } from '../../reducers/dataFetchReducer';
+import { initState } from '../../reducers/fetchQuotesListReducer';
 import useFetchQuotesList from '../../hooks/useFetchQuotesList';
 import useSearch from "../../hooks/useSearch";
 import usePagination from "../../hooks/usePagination";
@@ -11,8 +10,6 @@ import usePagination from "../../hooks/usePagination";
 const initContextValue = {
   ...initState,
   totalPages: 1,
-  currentPage: FIRST_PAGE,
-  search: '',
   updateSearch: () => {},
   fetchData: () => {},
   paginate: () => {},
@@ -21,21 +18,21 @@ const initContextValue = {
 const QuotesListContext = createContext(initContextValue);
 
 const QuotesListProvider = ({ children }) => {
-  const { currentPage: initPage, search: initSearch } = initContextValue;
   const [{ data: quotesList, isError, isLoading }, fetchData] = useFetchQuotesList();
 
-  const [search, updateSearch] = useSearch(initSearch);
+  const [page, paginate] = usePagination();
+
+  const [search, updateSearch] = useSearch();
   const foundQuotes = findQuotes(search, quotesList);
   const currentQuotesList = search ? foundQuotes : quotesList;
 
-  const [currentPage, paginate] = usePagination(initPage);
-  const [totalPages, data] = getDataForCurrentPage(currentPage, currentQuotesList, quotesPerPage);
+  const [totalPages, data] = getDataForCurrentPage(page, currentQuotesList, quotesPerPage);
 
   const value = {
     data,
     isError,
     isLoading,
-    currentPage,
+    page,
     totalPages,
     search,
     updateSearch,

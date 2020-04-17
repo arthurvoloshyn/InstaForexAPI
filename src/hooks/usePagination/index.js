@@ -1,15 +1,17 @@
-import { useState } from 'react';
+import { useReducer } from 'react';
 import { NEXT, PREV } from '../../constants/pagination';
+import fetchQuotesListReducer, { initState } from "../../reducers/fetchQuotesListReducer";
+import { changePage } from "../../actions";
 
-const usePagination = initialPage => {
-  const [currentPage, setCurrentPage] = useState(initialPage);
+const usePagination = () => {
+  const [{ page }, dispatch] = useReducer(fetchQuotesListReducer, initState);
 
   const paginate = operator => {
-    operator === NEXT && setCurrentPage(currentPage + 1);
-    operator === PREV && setCurrentPage(currentPage - 1);
+    operator === NEXT && dispatch(changePage(page + 1));
+    operator === PREV && dispatch(changePage(page - 1));
   };
 
-  return [currentPage, paginate];
+  return [page, paginate];
 };
 
 export default usePagination;

@@ -1,11 +1,12 @@
 import { useReducer } from "react";
 import { BASE_PATH, FIELDS_PARAM, QUOTES_TICK, INSTRUMENTS_PARAM } from '../../constants/paths';
 import { encodeSeparatedFields, encodeSymbol } from "../../utils";
-import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
+import fetchQuoteReducer, { initState } from '../../reducers/fetchQuoteReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
 const useFetchQuote = () => {
-    const [state, dispatch] = useReducer(dataFetchReducer, initState);
+    const [{ isLoading, isError, data }, dispatch] = useReducer(fetchQuoteReducer, initState);
+    const state = { isLoading, isError, data };
 
     const fetchData = async quoteId => {
         dispatch(fetchInit());

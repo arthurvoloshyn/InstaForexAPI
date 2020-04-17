@@ -6,7 +6,7 @@ export const initState = {
     data: [],
 };
 
-const dataFetchReducer = (state = initState, { type, payload }) => {
+const fetchQuoteReducer = (state = initState, { type, data }) => {
     switch (type) {
         case FETCH_INIT:
             return {
@@ -19,7 +19,7 @@ const dataFetchReducer = (state = initState, { type, payload }) => {
                 ...state,
                 isLoading: false,
                 isError: false,
-                data: payload,
+                data,
             };
         case FETCH_FAILURE:
             return {
@@ -32,4 +32,4 @@ const dataFetchReducer = (state = initState, { type, payload }) => {
     }
 };
 
-export default dataFetchReducer;
+export default fetchQuoteReducer;

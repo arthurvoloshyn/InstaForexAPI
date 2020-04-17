@@ -1,6 +1,6 @@
 import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
-import { initState } from '../../reducers/dataFetchReducer';
+import { initState } from '../../reducers/fetchQuoteReducer';
 import useFetchQuote from "../../hooks/useFetchQuote";
 
 const initContextValue = {

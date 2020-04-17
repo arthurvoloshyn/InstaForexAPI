@@ -1,11 +1,12 @@
 import { useEffect, useReducer } from "react";
 import { BASE_PATH, QUOTES_LIST, FIELDS_PARAM } from '../../constants/paths';
 import { encodeSeparatedFields, sortBySymbol } from "../../utils";
-import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
+import fetchQuotesListReducer, { initState } from '../../reducers/fetchQuotesListReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
 const useFetchQuotesList = () => {
-    const [state, dispatch] = useReducer(dataFetchReducer, initState);
+    const [{ isError, isLoading, data }, dispatch] = useReducer(fetchQuotesListReducer, initState);
+    const state = { isError, isLoading, data };
 
     const fetchData = async () => {
         dispatch(fetchInit());
