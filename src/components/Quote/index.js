@@ -25,7 +25,7 @@ Quote.propTypes = {
 
 Quote.defaultProps = {
     symbol: '',
-    description: '',
+    description: 'Here should be a description',
     digits: 0,
     onPress: () => {},
 };
