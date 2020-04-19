@@ -13,6 +13,7 @@
     "react-app",
     "prettier",
     "standard",
+    "airbnb",
     "prettier/react",
     "eslint:recommended",
     "plugin:jest/recommended",
@@ -28,7 +29,8 @@
     "es6": true,
     "node": true,
     "browser": true,
-    "jest": true
+    "jest": true,
+    "react-native/react-native": true
   },
 
   "plugins": [
@@ -83,6 +85,7 @@
       "anonymous": "neither",
       "method": {"before": true, "after": true}
     }],
+    "global-require": "off",
     "handle-callback-err": ["error", "^(err|error)$" ],
     "indent": ["error", 2, {
       "SwitchCase": 1,
@@ -244,13 +247,17 @@
     "standard/no-callback-literal": "error",
     "standard/object-curly-even-spacing": ["error", "either"],
 
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error",
     "react/no-did-mount-set-state": "error",
     "react/no-direct-mutation-state": "error",
     "react/prop-types": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
     "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/jsx-no-duplicate-props": "error",
+    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-props-no-spreading": 0,
+    "react/static-property-placement": 0,
+    "react/state-in-constructor": 0,
 
     "jest/expect-expect": 0,
 

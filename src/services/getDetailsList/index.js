@@ -4,7 +4,7 @@ import {
 } from '../../constants/lists';
 import { getDataListWithValues } from '../../utils';
 
-export const getDetailsList = (primaryData, secondaryData) => {
+const getDetailsList = (primaryData, secondaryData) => {
   const primaryDetailsList = getDataListWithValues(
     PRIMARY_DETAILS_LIST,
     primaryData,
@@ -16,3 +16,5 @@ export const getDetailsList = (primaryData, secondaryData) => {
 
   return primaryDetailsList.concat(secondaryDetailsList);
 };
+
+export default getDetailsList;
