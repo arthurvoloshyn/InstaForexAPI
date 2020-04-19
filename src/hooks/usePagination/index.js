@@ -1,5 +1,10 @@
 import { useState } from 'react';
-import { NEXT, PREV, GO_TO_FIRST_PAGE, FIRST_PAGE } from '../../constants/pagination';
+import {
+  NEXT,
+  PREV,
+  GO_TO_FIRST_PAGE,
+  FIRST_PAGE,
+} from '../../constants/pagination';
 
 const usePagination = initialPage => {
   const [currentPage, setCurrentPage] = useState(initialPage);

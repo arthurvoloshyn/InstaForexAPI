@@ -1,54 +1,70 @@
 import React from 'react';
 import { View, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 import { AntDesign } from '@expo/vector-icons';
-import { NEXT, PREV, FIRST_PAGE } from "../../constants/pagination";
-import { isAndroid } from "../../services/detectDeviceOS";
-import AppText from "../AppText";
+import { NEXT, PREV, FIRST_PAGE } from '../../constants/pagination';
+import { isAndroid } from '../../services/detectDeviceOS';
+import AppText from '../AppText';
 import styles from './styles';
 
-const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity }) => {
-    if (totalPages <= 1) return null;
+const Pagination = ({
+  totalPages,
+  currentPage,
+  onPress,
+  iconsSize,
+  activeOpacity,
+}) => {
+  if (totalPages <= 1) return null;
 
-    const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
+  const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
 
-    const isFirstPage = currentPage === FIRST_PAGE;
-    const isLastPage = currentPage === totalPages;
+  const isFirstPage = currentPage === FIRST_PAGE;
+  const isLastPage = currentPage === totalPages;
 
-    const prevPage = () => !isFirstPage && onPress(PREV);
-    const nextPage = () => !isLastPage && onPress(NEXT);
+  const prevPage = () => !isFirstPage && onPress(PREV);
+  const nextPage = () => !isLastPage && onPress(NEXT);
 
-    return (
-        <View style={[styles.pagination, styles.container]}>
-            <Wrapper onPress={prevPage} activeOpacity={activeOpacity} disabled={isFirstPage}>
-                <AntDesign name="caretleft" size={iconsSize} />
-            </Wrapper>
+  return (
+    <View style={[styles.pagination, styles.container]}>
+      <Wrapper
+        onPress={prevPage}
+        activeOpacity={activeOpacity}
+        disabled={isFirstPage}
+      >
+        <AntDesign name="caretleft" size={iconsSize} />
+      </Wrapper>
 
-            <View style={[styles.pagination, styles.body]}>
-                <AppText style={styles.text}>{currentPage} of {totalPages}</AppText>
-            </View>
+      <View style={[styles.pagination, styles.body]}>
+        <AppText style={styles.text}>
+          {currentPage} of {totalPages}
+        </AppText>
+      </View>
 
-            <Wrapper onPress={nextPage} activeOpacity={activeOpacity} disabled={isLastPage}>
-                <AntDesign name="caretright" size={iconsSize} />
-            </Wrapper>
-        </View>
-    );
+      <Wrapper
+        onPress={nextPage}
+        activeOpacity={activeOpacity}
+        disabled={isLastPage}
+      >
+        <AntDesign name="caretright" size={iconsSize} />
+      </Wrapper>
+    </View>
+  );
 };
 
 Pagination.propTypes = {
-    currentPage: PropTypes.number,
-    totalPages: PropTypes.number,
-    onPress: PropTypes.func,
-    iconsSize: PropTypes.number,
-    activeOpacity: PropTypes.number,
+  currentPage: PropTypes.number,
+  totalPages: PropTypes.number,
+  onPress: PropTypes.func,
+  iconsSize: PropTypes.number,
+  activeOpacity: PropTypes.number,
 };
 
 Pagination.defaultProps = {
-    currentPage: 1,
-    totalPages: 1,
-    onPress: () => {},
-    iconsSize: 40,
-    activeOpacity: 0.7,
+  currentPage: 1,
+  totalPages: 1,
+  onPress: () => {},
+  iconsSize: 40,
+  activeOpacity: 0.7,
 };
 
 export default Pagination;

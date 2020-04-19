@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ErrorIndicator from "../ErrorIndicator";
+import ErrorIndicator from '../ErrorIndicator';
 
 class ErrorBoundary extends Component {
   static propTypes = {
@@ -8,7 +8,7 @@ class ErrorBoundary extends Component {
   };
 
   state = {
-    hasError: false
+    hasError: false,
   };
 
   static getDerivedStateFromError() {

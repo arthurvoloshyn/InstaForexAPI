@@ -1,37 +1,42 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useCallback } from 'react';
 import { BASE_PATH, QUOTES_LIST, FIELDS_PARAM } from '../../constants/paths';
-import { encodeSeparatedFields, sortBySymbol } from "../../utils";
+import { encodeSeparatedFields, sortBySymbol } from '../../utils';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
 const useFetchQuotesList = () => {
-    const [{ data, isLoading, isError }, dispatch] = useReducer(dataFetchReducer, initState);
-    const state = { isLoading, isError, data };
+  const [{ data, isLoading, isError }, dispatch] = useReducer(
+    dataFetchReducer,
+    initState,
+  );
+  const state = { isLoading, isError, data };
 
-    const fetchData = async () => {
-        dispatch(fetchInit());
+  const fetchData = useCallback(async () => {
+    dispatch(fetchInit());
 
-        try {
-            const separatedFields = ['symbol', 'description', 'digits'];
-            const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
+    try {
+      const separatedFields = ['symbol', 'description', 'digits'];
+      const encodedSeparatedFields = encodeSeparatedFields(separatedFields);
 
-            const result = await fetch(`${BASE_PATH}${QUOTES_LIST}?${FIELDS_PARAM}${encodedSeparatedFields}`);
-            const data = await result.json();
+      const response = await fetch(
+        `${BASE_PATH}${QUOTES_LIST}?${FIELDS_PARAM}${encodedSeparatedFields}`,
+      );
+      const result = await response.json();
 
-            const { quotesList = [] } = data;
-            const sortedQuotesList = sortBySymbol(quotesList);
+      const { quotesList = [] } = result;
+      const sortedQuotesList = sortBySymbol(quotesList);
 
-            dispatch(fetchSuccess(sortedQuotesList));
-        } catch {
-            dispatch(fetchFailure());
-        }
-    };
+      dispatch(fetchSuccess(sortedQuotesList));
+    } catch {
+      dispatch(fetchFailure());
+    }
+  }, []);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-    return [state, fetchData];
+  return [state, fetchData];
 };
 
 export default useFetchQuotesList;
