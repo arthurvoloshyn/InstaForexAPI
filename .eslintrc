@@ -22,6 +22,7 @@
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:react-native/all",
+    "plugin:jsx-a11y/strict",
     "@react-native-community"
   ],
 
@@ -31,6 +32,12 @@
     "browser": true,
     "jest": true,
     "react-native/react-native": true
+  },
+
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   },
 
   "plugins": [
@@ -255,6 +262,12 @@
     "react/jsx-no-bind": ["error", { "allowArrowFunctions": true }],
     "react/jsx-no-duplicate-props": "error",
     "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-fragments": [
+      1,
+      "syntax"
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     "react/jsx-props-no-spreading": 0,
     "react/static-property-placement": 0,
     "react/state-in-constructor": 0,
