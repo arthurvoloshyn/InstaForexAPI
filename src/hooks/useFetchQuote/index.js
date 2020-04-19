@@ -10,11 +10,7 @@ import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';
 
 const useFetchQuote = () => {
-  const [{ data = [], isLoading, isError }, dispatch] = useReducer(
-    dataFetchReducer,
-    initState,
-  );
-  const state = { isLoading, isError, data };
+  const [state, dispatch] = useReducer(dataFetchReducer, initState);
 
   const fetchData = useCallback(async quoteId => {
     dispatch(fetchInit());
