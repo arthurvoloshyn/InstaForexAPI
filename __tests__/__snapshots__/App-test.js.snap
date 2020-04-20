@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "flex": 1,
+      "marginTop": 10,
+    }
+  }
+>
+  <TextInput
+    allowFontScaling={true}
+    onChangeText={[Function]}
+    placeholder="Search..."
+    rejectResponderTermination={true}
+    style={
+      Object {
+        "alignItems": "center",
+        "backgroundColor": "#fff",
+        "borderColor": "#808080",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "flexDirection": "row",
+        "fontSize": 26,
+        "justifyContent": "space-between",
+        "marginBottom": 10,
+        "padding": 10,
+        "width": 730,
+      }
+    }
+    underlineColorAndroid="transparent"
+    value=""
+  />
+  <View
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "borderColor": "#808080",
+        "borderRadius": 5,
+        "borderWidth": 1,
+        "height": 1064,
+        "padding": 10,
+        "width": 730,
+      }
+    }
+  >
+    <RCTScrollView
+      ListEmptyComponent={[Function]}
+      data={Array []}
+      disableVirtualization={false}
+      getItem={[Function]}
+      getItemCount={[Function]}
+      horizontal={false}
+      initialNumToRender={10}
+      keyExtractor={[Function]}
+      maxToRenderPerBatch={10}
+      numColumns={1}
+      onContentSizeChange={[Function]}
+      onEndReachedThreshold={2}
+      onLayout={[Function]}
+      onMomentumScrollEnd={[Function]}
+      onRefresh={[Function]}
+      onScroll={[Function]}
+      onScrollBeginDrag={[Function]}
+      onScrollEndDrag={[Function]}
+      refreshControl={
+        <RefreshControlMock
+          onRefresh={[Function]}
+          refreshing={false}
+        />
+      }
+      refreshing={false}
+      removeClippedSubviews={false}
+      renderItem={[Function]}
+      scrollEventThrottle={50}
+      stickyHeaderIndices={Array []}
+      updateCellsBatchingPeriod={50}
+      viewabilityConfigCallbackPairs={Array []}
+      windowSize={21}
+    >
+      <RCTRefreshControl />
+      <View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "height": 300,
+              "justifyContent": "center",
+              "padding": 10,
+            }
+          }
+        >
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": "100%",
+                "resizeMode": "contain",
+                "width": "100%",
+              }
+            }
+          />
+        </View>
+      </View>
+    </RCTScrollView>
+  </View>
+</View>
+`;

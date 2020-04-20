@@ -6,11 +6,16 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
+    "test": "jest --watchAll --verbose",
+    "test:coverage": "jest --bail --coverage",
     "lint:styles": "stylelint --fix \"**/*.{js,jsx}\"",
     "lint": "eslint --ext .js --ext .jsx --fix ./",
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "format:styles": "prettier \"**/*.{js,jsx}\" --write",
     "precommit": "lint-staged"
+  },
+  "jest": {
+    "preset": "jest-expo"
   },
   "dependencies": {
     "@expo/vector-icons": "^10.0.6",
@@ -52,6 +57,7 @@
     "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-standard": "^4.0.1",
     "husky": "^3.1.0",
+    "jest-expo": "~37.0.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "stylelint": "^13.3.2",
