@@ -6,10 +6,10 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "lint:styles": "stylelint --fix --syntax css **/*.css",
+    "lint:styles": "stylelint --fix \"**/*.{js,jsx}\"",
     "lint": "eslint --ext .js --ext .jsx --fix ./",
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
-    "format:styles": "prettier \"**/*.{scss,sass,less,css}\" --parser css --write",
+    "format:styles": "prettier \"**/*.{js,jsx}\" --write",
     "precommit": "lint-staged"
   },
   "dependencies": {
@@ -54,14 +54,14 @@
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
-    "stylelint": "^12.0.0",
+    "stylelint": "^13.3.2",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-primer": "^9.0.0",
     "stylelint-config-recommended": "^3.0.0",
-    "stylelint-config-recommended-scss": "^4.1.0",
     "stylelint-config-standard": "^19.0.0",
     "stylelint-order": "^3.1.1",
-    "stylelint-prettier": "^1.1.2"
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-react-native": "^2.2.0"
   },
   "husky": {
     "hooks": {

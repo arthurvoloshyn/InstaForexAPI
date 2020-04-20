@@ -2,12 +2,12 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-recommended",
-    "stylelint-config-recommended-scss",
     "stylelint-config-prettier"
   ],
   "plugins": [
     "stylelint-order",
-    "stylelint-prettier"
+    "stylelint-prettier",
+    "stylelint-react-native"
   ],
   "rules": {
     "unicode-bom": "never",
@@ -56,6 +56,8 @@
       "rules",
       "at-rules"
     ],
-    "order/properties-alphabetical-order": true
+    "order/properties-alphabetical-order": true,
+
+    "react-native/style-property-no-unknown": true
   }
 }
