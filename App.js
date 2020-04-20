@@ -2,13 +2,13 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { useFonts } from '@use-expo/font';
 import { AppLoading } from 'expo';
-import FONTS_LIST from './src/constants/fonts';
+import { FONTS } from './src/constants/files';
 import MainProvider from './src/contextes/mainContext';
 import Main from './src/layouts/Main';
 import ErrorBoundary from './src/components/ErrorBoundary';
 
 const App = () => {
-  const [fontsLoaded] = useFonts(FONTS_LIST);
+  const [fontsLoaded] = useFonts(FONTS);
 
   if (!fontsLoaded) return <AppLoading />;
 

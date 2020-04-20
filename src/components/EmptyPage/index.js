@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import IMGS from '../../constants/imgs';
+import { IMGS } from '../../constants/files';
 import styles from './styles';
 
 const EmptyPage = () => (
