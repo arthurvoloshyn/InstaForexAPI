@@ -6,8 +6,7 @@ export const encodeSeparatedFields = fields => {
 
 export const encodeSymbol = symbol => encodeURIComponent(symbol);
 
-export const sortBySymbol = data =>
-  data.sort((a, b) => a.symbol.localeCompare(b.symbol));
+export const sortBySymbol = data => data.sort((a, b) => a.symbol.localeCompare(b.symbol));
 
 export const getDataListWithValues = (list = [], data) => {
   if (!data) return list;

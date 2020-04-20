@@ -1,8 +1,4 @@
-import {
-  FETCH_INIT,
-  FETCH_FAILURE,
-  FETCH_SUCCESS,
-} from '../../constants/actionTypes';
+import { FETCH_INIT, FETCH_FAILURE, FETCH_SUCCESS } from '../../constants/actionTypes';
 
 export const initState = {
   isLoading: false,

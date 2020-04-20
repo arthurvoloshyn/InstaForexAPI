@@ -9,6 +9,4 @@ const navigationalElementsHeight = 280;
 export const deviceWidth = width - PADDING_HORIZONTAL * 2;
 export const deviceHeight = Math.round(height);
 
-export const quotesPerPage = Math.floor(
-  (deviceHeight - navigationalElementsHeight) / quoteHeight,
-);
+export const quotesPerPage = Math.floor((deviceHeight - navigationalElementsHeight) / quoteHeight);

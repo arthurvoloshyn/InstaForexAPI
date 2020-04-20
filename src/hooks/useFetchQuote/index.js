@@ -1,10 +1,5 @@
 import { useReducer, useCallback } from 'react';
-import {
-  BASE_PATH,
-  FIELDS_PARAM,
-  QUOTES_TICK,
-  INSTRUMENTS_PARAM,
-} from '../../constants/paths';
+import { BASE_PATH, FIELDS_PARAM, QUOTES_TICK, INSTRUMENTS_PARAM } from '../../constants/paths';
 import { encodeSeparatedFields, encodeSymbol } from '../../utils';
 import dataFetchReducer, { initState } from '../../reducers/dataFetchReducer';
 import { fetchInit, fetchFailure, fetchSuccess } from '../../actions';

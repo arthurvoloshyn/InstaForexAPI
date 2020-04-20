@@ -36,12 +36,7 @@ const QuotesList = ({ navigation }) => {
 
   /* eslint-disable react/prop-types */
   const renderItem = ({ item: { symbol, description, digits } }) => (
-    <Quote
-      symbol={symbol}
-      description={description}
-      digits={digits}
-      onPress={openDetails}
-    />
+    <Quote symbol={symbol} description={description} digits={digits} onPress={openDetails} />
   );
   /* eslint-enable */
 
@@ -75,11 +70,7 @@ const QuotesList = ({ navigation }) => {
         />
       </View>
 
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        onPress={paginate}
-      />
+      <Pagination totalPages={totalPages} currentPage={currentPage} onPress={paginate} />
     </View>
   );
 };

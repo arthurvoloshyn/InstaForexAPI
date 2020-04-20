@@ -9,11 +9,7 @@ const AppStatusBar = ({ backgroundColor, translucent, ...attrs }) => {
 
   return (
     <View style={[styles.statusBar, statusBarStyles]}>
-      <StatusBar
-        translucent={translucent}
-        backgroundColor={backgroundColor}
-        {...attrs}
-      />
+      <StatusBar translucent={translucent} backgroundColor={backgroundColor} {...attrs} />
     </View>
   );
 };

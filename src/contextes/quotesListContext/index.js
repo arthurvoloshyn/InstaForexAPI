@@ -22,21 +22,14 @@ const QuotesListContext = createContext(initContextValue);
 
 const QuotesListProvider = ({ children }) => {
   const { currentPage: initPage, search: initSearch } = initContextValue;
-  const [
-    { data: quotesList, isError, isLoading },
-    fetchData,
-  ] = useFetchQuotesList();
+  const [{ data: quotesList, isError, isLoading }, fetchData] = useFetchQuotesList();
 
   const [search, updateSearch] = useSearch(initSearch);
   const foundQuotes = findQuotes(search, quotesList);
   const currentQuotesList = search ? foundQuotes : quotesList;
 
   const [currentPage, paginate] = usePagination(initPage);
-  const [totalPages, data] = getDataForCurrentPage(
-    currentPage,
-    currentQuotesList,
-    quotesPerPage,
-  );
+  const [totalPages, data] = getDataForCurrentPage(currentPage, currentQuotesList, quotesPerPage);
 
   const value = {
     data,
@@ -50,11 +43,7 @@ const QuotesListProvider = ({ children }) => {
     paginate,
   };
 
-  return (
-    <QuotesListContext.Provider value={value}>
-      {children}
-    </QuotesListContext.Provider>
-  );
+  return <QuotesListContext.Provider value={value}>{children}</QuotesListContext.Provider>;
 };
 
 QuotesListProvider.propTypes = {

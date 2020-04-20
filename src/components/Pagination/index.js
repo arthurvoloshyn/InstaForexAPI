@@ -7,13 +7,7 @@ import { isAndroid } from '../../services/detectDeviceOS';
 import AppText from '../AppText';
 import styles from './styles';
 
-const Pagination = ({
-  totalPages,
-  currentPage,
-  onPress,
-  iconsSize,
-  activeOpacity,
-}) => {
+const Pagination = ({ totalPages, currentPage, onPress, iconsSize, activeOpacity }) => {
   if (totalPages <= 1) return null;
 
   const Wrapper = isAndroid ? TouchableNativeFeedback : TouchableOpacity;
@@ -26,11 +20,7 @@ const Pagination = ({
 
   return (
     <View style={[styles.pagination, styles.container]}>
-      <Wrapper
-        onPress={prevPage}
-        activeOpacity={activeOpacity}
-        disabled={isFirstPage}
-      >
+      <Wrapper onPress={prevPage} activeOpacity={activeOpacity} disabled={isFirstPage}>
         <AntDesign name="caretleft" size={iconsSize} />
       </Wrapper>
 
@@ -40,11 +30,7 @@ const Pagination = ({
         </AppText>
       </View>
 
-      <Wrapper
-        onPress={nextPage}
-        activeOpacity={activeOpacity}
-        disabled={isLastPage}
-      >
+      <Wrapper onPress={nextPage} activeOpacity={activeOpacity} disabled={isLastPage}>
         <AntDesign name="caretright" size={iconsSize} />
       </Wrapper>
     </View>

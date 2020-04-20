@@ -116,6 +116,7 @@ REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
 ```
 
 Windows:
+
 ```
 set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
 npm start
@@ -184,9 +185,9 @@ If you're not able to load the `http` URL in your phone's web browser, try using
 
 If you're on a Mac, there are a few errors that users sometimes see when attempting to `npm run ios`:
 
-* "non-zero exit code: 107"
-* "You may need to install Xcode" but it is already installed
-* and others
+- "non-zero exit code: 107"
+- "You may need to install Xcode" but it is already installed
+- and others
 
 There are a few steps you may want to take to troubleshoot these kinds of errors:
 

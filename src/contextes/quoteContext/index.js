@@ -20,9 +20,7 @@ const QuoteProvider = ({ children }) => {
     fetchData,
   };
 
-  return (
-    <QuoteContext.Provider value={value}>{children}</QuoteContext.Provider>
-  );
+  return <QuoteContext.Provider value={value}>{children}</QuoteContext.Provider>;
 };
 
 QuoteProvider.propTypes = {
