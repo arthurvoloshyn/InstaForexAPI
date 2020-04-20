@@ -11,7 +11,6 @@
     "lint:styles": "stylelint --fix \"**/*.{js,jsx}\"",
     "lint": "eslint --ext .js --ext .jsx --fix ./",
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
-    "format:styles": "prettier \"**/*.{js,jsx}\" --write",
     "precommit": "lint-staged"
   },
   "jest": {
