@@ -1,7 +1,7 @@
 import noItems from '../../../assets/images/no-items.png';
 
-const IMAGES = {
+const IMGS = {
   noItems,
 };
 
-export default IMAGES;
+export default IMGS;

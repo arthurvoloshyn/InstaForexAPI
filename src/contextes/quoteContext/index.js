@@ -11,7 +11,7 @@ const initContextValue = {
 const QuoteContext = createContext(initContextValue);
 
 const QuoteProvider = ({ children }) => {
-  const [{ data = [], isError, isLoading }, fetchData] = useFetchQuote();
+  const [{ data = [], isLoading, isError }, fetchData] = useFetchQuote();
 
   const value = {
     data,

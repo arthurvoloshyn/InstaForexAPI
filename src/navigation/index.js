@@ -5,15 +5,15 @@ import { DETAILS_SCREEN, HOME_SCREEN, HOME_OPTIONS, DETAILS_OPTIONS } from '../c
 import QuotesList from '../screens/QuotesList';
 import Details from '../screens/Details';
 
-const Stack = createStackNavigator();
+const { Navigator, Screen } = createStackNavigator();
 
 const Navigation = () => (
   <NavigationContainer>
-    <Stack.Navigator initialRouteName={HOME_SCREEN}>
-      <Stack.Screen name={HOME_SCREEN} component={QuotesList} options={HOME_OPTIONS} />
+    <Navigator initialRouteName={HOME_SCREEN}>
+      <Screen name={HOME_SCREEN} component={QuotesList} options={HOME_OPTIONS} />
 
-      <Stack.Screen name={DETAILS_SCREEN} component={Details} options={DETAILS_OPTIONS} />
-    </Stack.Navigator>
+      <Screen name={DETAILS_SCREEN} component={Details} options={DETAILS_OPTIONS} />
+    </Navigator>
   </NavigationContainer>
 );
 

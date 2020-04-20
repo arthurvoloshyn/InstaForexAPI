@@ -10,8 +10,8 @@ import usePagination from '../../hooks/usePagination';
 
 const initContextValue = {
   ...initState,
-  totalPages: 1,
   currentPage: FIRST_PAGE,
+  totalPages: 1,
   search: '',
   updateSearch: () => {},
   fetchData: () => {},
@@ -22,7 +22,7 @@ const QuotesListContext = createContext(initContextValue);
 
 const QuotesListProvider = ({ children }) => {
   const { currentPage: initPage, search: initSearch } = initContextValue;
-  const [{ data: quotesList, isError, isLoading }, fetchData] = useFetchQuotesList();
+  const [{ data: quotesList, isLoading, isError }, fetchData] = useFetchQuotesList();
 
   const [search, updateSearch] = useSearch(initSearch);
   const foundQuotes = findQuotes(search, quotesList);
@@ -33,8 +33,8 @@ const QuotesListProvider = ({ children }) => {
 
   const value = {
     data,
-    isError,
     isLoading,
+    isError,
     currentPage,
     totalPages,
     search,
