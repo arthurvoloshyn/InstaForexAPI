@@ -30,7 +30,7 @@ export const getDataListWithValues = (list = [], data) => {
       case 'Change 24h':
         return { ...item, value: change24h };
       default:
-        return { ...item };
+        return item;
     }
   });
 };
