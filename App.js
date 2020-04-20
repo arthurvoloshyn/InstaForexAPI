@@ -9,10 +9,11 @@ import robotoRegularFont from './assets/fonts/Roboto-Regular.ttf';
 import robotoBoldFont from './assets/fonts/Roboto-Bold.ttf';
 
 const App = () => {
-  const [fontsLoaded] = useFonts({
+  const fontsList = {
     'roboto-regular': robotoRegularFont,
     'roboto-bold': robotoBoldFont,
-  });
+  };
+  const [fontsLoaded] = useFonts(fontsList);
 
   if (!fontsLoaded) return <AppLoading />;
 
