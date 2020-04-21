@@ -1,0 +1,39 @@
+{
+  "background_color": "#ffffff",
+  "description": "API Quotes InstaForex",
+  "display": "standalone",
+  "lang": "en",
+  "name": "InstaForexAPI",
+  "short_name": "InstaForexAPI",
+  "start_url": "/?utm_source=web_app_manifest",
+  "orientation": "portrait",
+  "related_applications": [
+    {
+      "platform": "itunes",
+      "id": "com.arturvoloshyn.instaforexapi"
+    },
+    {
+      "platform": "play",
+      "url": "http://play.google.com/store/apps/details?id=com.arturvoloshyn.instaforexapi",
+      "id": "com.arturvoloshyn.instaforexapi"
+    }
+  ],
+  "prefer_related_applications": true,
+  "icons": [
+    {
+      "src": "/pwa/chrome-icon/chrome-icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa/chrome-icon/chrome-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa/chrome-icon/chrome-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
