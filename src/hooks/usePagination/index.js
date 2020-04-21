@@ -15,6 +15,8 @@ const usePagination = initialPage => {
       case GO_TO_FIRST_PAGE:
         setCurrentPage(FIRST_PAGE);
         break;
+      default:
+        break;
     }
   };
 

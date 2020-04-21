@@ -55,6 +55,8 @@ Details.propTypes = {
   route: PropTypes.shape({
     params: PropTypes.shape({
       symbol: PropTypes.string,
+      description: PropTypes.string,
+      digits: PropTypes.number,
     }),
   }),
   navigation: PropTypes.shape({
@@ -66,6 +68,8 @@ Details.defaultProps = {
   route: {
     params: {
       symbol: '',
+      description: 'Here should be a description',
+      digits: 0,
     },
   },
   navigation: {

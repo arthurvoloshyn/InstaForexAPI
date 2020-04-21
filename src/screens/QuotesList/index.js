@@ -27,19 +27,14 @@ const QuotesList = ({ navigation }) => {
     paginate,
   } = useContext(QuotesListContext);
 
-  const openDetails = (symbol, description, digits) =>
-    navigation.navigate(DETAILS_SCREEN, { symbol, description, digits });
+  const openDetails = params => navigation.navigate(DETAILS_SCREEN, params);
   const handleSearch = text => {
     updateSearch(text);
     currentPage !== FIRST_PAGE && paginate(GO_TO_FIRST_PAGE);
   };
 
-  /* eslint-disable react/prop-types */
-  const renderItem = ({ item: { symbol, description, digits } }) => (
-    <Quote symbol={symbol} description={description} digits={digits} onPress={openDetails} />
-  );
-  /* eslint-enable */
-
+  // eslint-disable-next-line react/prop-types
+  const renderItem = ({ item }) => <Quote item={item} onPress={openDetails} />;
   const keyExtractor = ({ symbol }) => symbol;
   const renderEmpty = () => <EmptyPage />;
 
