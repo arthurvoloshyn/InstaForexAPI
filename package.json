@@ -1,4 +1,7 @@
 {
+  "homepage": "https://ArturW1998.github.io/InstaForexAPI",
+  "name": "InstaForexAPI",
+  "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
     "start": "expo start",
@@ -8,7 +11,10 @@
     "eject": "expo eject",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
+    "build:web": "expo build:web",
     "publish": "expo publish",
+    "predeploy": "yarn run build:web",
+    "deploy": "gh-pages -d web-build",
     "test": "jest --watchAll --verbose",
     "test:coverage": "jest --bail --coverage",
     "lint:styles": "stylelint --fix \"src/**/*.{js,jsx}\"",
@@ -58,6 +64,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
     "husky": "^3.1.0",
     "jest-expo": "~37.0.0",
     "lint-staged": "^9.5.0",
@@ -73,7 +80,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run precommit"
+      "pre-commit": "yarn run precommit"
     }
   },
   "private": true

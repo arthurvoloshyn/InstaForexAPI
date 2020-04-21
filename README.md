@@ -1,3 +1,75 @@
+# InstaForexAPI
+
+Simple React API Quotes InstaForex
+
+### Demo
+
+- [iOS](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/ios/%40arthurvoloshyn/InstaForexAPI-dd5cf85e-71ba-4502-83ef-1c511c16d0b7-simulator.tar.gz)
+- [Android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40arthurvoloshyn/InstaForexAPI-ede35f25ddf34284a3b1748827eb089d-signed.aab)
+- [Web](https://arturw1998.github.io/InstaForexAPI/)
+
+### To run
+
+- You'll need to have [git](https://git-scm.com/) and [yarn](https://classic.yarnpkg.com/en/) installed in your system.
+
+```
+git clone https://github.com/ArturW1998/InstaForexAPI.git
+```
+
+- Then install the dependencies:
+
+```
+yarn install
+```
+
+- Run development server:
+
+```
+yarn start
+```
+
+### To build the production package
+
+```
+yarn run build:ios
+```
+
+```
+yarn run build:android
+```
+
+```
+yarn run build:web
+```
+
+### Eslint
+
+To do the actual linting, run:
+
+```
+yarn run lint
+```
+
+### Stylelint
+
+To do the style linting, run:
+
+```
+yarn run lint:styles
+```
+
+### Jest tests
+
+To run tests using Jest:
+
+```
+yarn test
+```
+
+### Contribute
+
+Please contribute to the project if you know how to make it better, including this README :)
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
