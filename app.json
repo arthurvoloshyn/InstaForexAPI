@@ -21,6 +21,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "description": "API Quotes InstaForex",
     "sdkVersion": "37.0.0",
     "ios": {
       "bundleIdentifier": "com.arturvoloshyn.instaforexapi",
