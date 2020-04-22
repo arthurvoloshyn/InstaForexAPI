@@ -11,7 +11,7 @@
     "eject": "expo eject",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
-    "build:web": "expo build:web",
+    "build": "expo build:web",
     "publish": "expo publish",
     "predeploy": "yarn run build:web",
     "deploy": "gh-pages -d web-build",
