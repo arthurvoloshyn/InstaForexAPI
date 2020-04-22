@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/serve.json"
   },
   {
-    "revision": "3e798990acfb55ce0e6a",
-    "url": "/static/js/2.f4f2a18e.chunk.js"
+    "revision": "bba391b71b45c09fbef7",
+    "url": "/static/js/2.e228647b.chunk.js"
   },
   {
     "revision": "d2285965fe34b05465047401b8595dd0",
@@ -44,7 +44,7 @@ self.__precacheManifest = [
     "url": "/manifest.json"
   },
   {
-    "revision": "7e398efee6c570cd504d54bb70593457",
+    "revision": "1c542cbf7ee4f37e256e909c1e26860f",
     "url": "/index.html"
   },
   {
