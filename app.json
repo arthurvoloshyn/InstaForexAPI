@@ -15,6 +15,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "primaryColor": "#000000",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -22,6 +23,7 @@
       "**/*"
     ],
     "description": "API Quotes InstaForex",
+    "githubUrl": "https://github.com/ArturW1998/InstaForexAPI",
     "sdkVersion": "37.0.0",
     "ios": {
       "bundleIdentifier": "com.arturvoloshyn.instaforexapi",

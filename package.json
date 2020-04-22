@@ -1,5 +1,5 @@
 {
-  "homepage": "https://ArturW1998.github.io/InstaForexAPI",
+  "homepage": "https://instaforexapi.now.sh",
   "name": "InstaForexAPI",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
@@ -11,16 +11,17 @@
     "eject": "expo eject",
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
-    "build": "expo build:web",
+    "build:web": "expo build:web",
     "publish": "expo publish",
-    "predeploy": "yarn run build:web",
-    "deploy": "gh-pages -d web-build",
     "test": "jest --watchAll --verbose",
     "test:coverage": "jest --bail --coverage",
     "lint:styles": "stylelint --fix \"src/**/*.{js,jsx}\"",
     "lint": "eslint --ext .js --ext .jsx --fix src __tests__ App.js",
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "predeploy": "yarn run build:web",
+    "deploy": "cd web-build && now",
+    "prod:now": "cd web-build && now --prod"
   },
   "jest": {
     "preset": "jest-expo"
@@ -64,10 +65,10 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "eslint-plugin-react-native": "^3.8.1",
     "eslint-plugin-standard": "^4.0.1",
-    "gh-pages": "^2.2.0",
     "husky": "^3.1.0",
     "jest-expo": "~37.0.0",
     "lint-staged": "^9.5.0",
+    "now": "^18.0.0",
     "prettier": "^1.19.1",
     "stylelint": "^13.3.2",
     "stylelint-config-prettier": "^8.0.0",
