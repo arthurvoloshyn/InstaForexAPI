@@ -7,6 +7,8 @@ Simple React API Quotes InstaForex
 - [iOS](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/ios/%40arthurvoloshyn/InstaForexAPI-dd5cf85e-71ba-4502-83ef-1c511c16d0b7-simulator.tar.gz)
 - [Android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40arthurvoloshyn/InstaForexAPI-ede35f25ddf34284a3b1748827eb089d-signed.aab)
 - [Web](https://arturw1998.github.io/InstaForexAPI/)
+- [Expo](https://expo.io/@arthurvoloshyn/InstaForexAPI/)
+- [Appetize](https://expo.io/appetize-simulator?url=https://expo.io/@arthurvoloshyn/InstaForexAPI/)
 
 ### To run
 
