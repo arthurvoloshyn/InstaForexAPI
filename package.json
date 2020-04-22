@@ -20,8 +20,9 @@
     "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "precommit": "lint-staged",
     "predeploy": "yarn run build:web",
-    "deploy": "cd web-build && now",
-    "prod:now": "cd web-build && now --prod"
+    "deploy": "now web-build -n instaforexapi",
+    "prod:now": "now web-build --prod -n instaforexapi",
+    "dev:now": "now dev web-build"
   },
   "jest": {
     "preset": "jest-expo"
