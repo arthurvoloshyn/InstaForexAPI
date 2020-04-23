@@ -4,7 +4,7 @@ Simple React API Quotes InstaForex
 
 ### Demo
 
-- [iOS](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/ios/%40arthurvoloshyn/InstaForexAPI-dd5cf85e-71ba-4502-83ef-1c511c16d0b7-simulator.tar.gz) (download)
+- [iOS](https://expo.io/artifacts/132154af-03eb-4390-bd7e-3be781f490d3) (download)
 - [Android](https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40arthurvoloshyn/InstaForexAPI-ede35f25ddf34284a3b1748827eb089d-signed.aab) (download)
 - [Web](https://instaforexapi.now.sh)
 - [Expo](https://expo.io/@arthurvoloshyn/InstaForexAPI/)
