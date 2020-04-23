@@ -12,6 +12,7 @@
     "build:ios": "expo build:ios",
     "build:android": "expo build:android",
     "build:web": "expo build:web",
+    "build:status": "expo build:status",
     "publish": "expo publish",
     "test": "jest --watchAll --verbose",
     "test:coverage": "jest --bail --coverage",
