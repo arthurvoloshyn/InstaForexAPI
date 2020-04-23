@@ -1,6 +1,6 @@
 {
   "homepage": "https://instaforexapi.now.sh",
-  "name": "InstaForexAPI",
+  "name": "instaforexapi",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
@@ -72,6 +72,7 @@
     "lint-staged": "^9.5.0",
     "now": "^18.0.0",
     "prettier": "^1.19.1",
+    "react-test-renderer": "^16.13.1",
     "stylelint": "^13.3.2",
     "stylelint-config-prettier": "^8.0.0",
     "stylelint-config-primer": "^9.0.0",
