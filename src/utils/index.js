@@ -50,5 +50,5 @@ export const findQuotes = (search, quotesList) =>
     const itemData = symbol.toUpperCase();
     const textData = search.toUpperCase();
 
-    return itemData.match(textData);
+    return itemData.includes(textData);
   });
