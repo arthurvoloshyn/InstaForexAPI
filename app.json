@@ -22,6 +22,7 @@
     "assetBundlePatterns": [
       "**/*"
     ],
+    "privacy": "public",
     "description": "API Quotes InstaForex",
     "githubUrl": "https://github.com/ArturW1998/InstaForexAPI",
     "sdkVersion": "37.0.0",
