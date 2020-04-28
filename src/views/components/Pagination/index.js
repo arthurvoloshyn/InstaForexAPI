@@ -2,8 +2,8 @@ import React from 'react';
 import { View, TouchableNativeFeedback, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 import { AntDesign } from '@expo/vector-icons';
-import { NEXT, PREV, FIRST_PAGE } from '../../constants/pagination';
-import { isAndroid } from '../../services/detectDeviceOS';
+import { NEXT, PREV, FIRST_PAGE } from '../../../constants/pagination';
+import { isAndroid } from '../../../services/detectDeviceOS';
 import AppText from '../AppText';
 import styles from './styles';
 

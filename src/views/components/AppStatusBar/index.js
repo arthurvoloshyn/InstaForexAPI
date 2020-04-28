@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { PRIMARY_COLOR } from '../../constants/themes';
+import { PRIMARY_COLOR } from '../../../constants/themes';
 import styles from './styles';
 
 const AppStatusBar = ({ backgroundColor, translucent, ...attrs }) => {

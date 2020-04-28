@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { LIGHT_COLOR } from '../../constants/themes';
+import { LIGHT_COLOR } from '../../../constants/themes';
 
 const styles = StyleSheet.create({
   button: {

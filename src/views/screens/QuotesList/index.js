@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { FlatList, View } from 'react-native';
 import PropTypes from 'prop-types';
-import { DETAILS_SCREEN } from '../../constants/routes';
-import { DANGER_COLOR } from '../../constants/themes';
-import { GO_TO_FIRST_PAGE, FIRST_PAGE } from '../../constants/pagination';
-import { QuotesListContext } from '../../contextes/quotesListContext';
+import { DETAILS_SCREEN } from '../../../constants/routes';
+import { DANGER_COLOR } from '../../../constants/themes';
+import { GO_TO_FIRST_PAGE, FIRST_PAGE } from '../../../constants/pagination';
+import { QuotesListContext } from '../../../contextes/quotesListContext';
 import ErrorIndicator from '../../components/ErrorIndicator';
 import AppButton from '../../components/AppButton';
 import AppLoader from '../../components/AppLoader';

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { deviceWidth } from '../../services/getDeviceSize';
+import { deviceWidth } from '../../../services/getDeviceSize';
 
 const styles = StyleSheet.create({
   body: {

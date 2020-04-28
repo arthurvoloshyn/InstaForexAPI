@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { PRIMARY_COLOR } from '../../constants/themes';
+import { PRIMARY_COLOR } from '../../../constants/themes';
 
 const styles = StyleSheet.create({
   quote: {

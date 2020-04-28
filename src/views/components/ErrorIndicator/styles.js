@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { DANGER_COLOR } from '../../constants/themes';
+import { DANGER_COLOR } from '../../../constants/themes';
 
 const styles = StyleSheet.create({
   error: {

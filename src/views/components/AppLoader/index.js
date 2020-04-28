@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import PropTypes from 'prop-types';
-import { PRIMARY_COLOR } from '../../constants/themes';
+import { PRIMARY_COLOR } from '../../../constants/themes';
 import styles from './styles';
 
 const AppLoader = ({ size, color, ...attrs }) => (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { DETAILS_SCREEN, HOME_SCREEN, HOME_OPTIONS, DETAILS_OPTIONS } from '../constants/routes';
+import { DETAILS_SCREEN, HOME_SCREEN, HOME_OPTIONS, DETAILS_OPTIONS } from '../../constants/routes';
 import QuotesList from '../screens/QuotesList';
 import Details from '../screens/Details';
 

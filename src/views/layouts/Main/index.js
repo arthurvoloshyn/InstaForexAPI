@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
-import { PRIMARY_COLOR, LIGHT_COLOR } from '../../constants/themes';
-import { isIOS } from '../../services/detectDeviceOS';
+import { PRIMARY_COLOR, LIGHT_COLOR } from '../../../constants/themes';
+import { isIOS } from '../../../services/detectDeviceOS';
 import Navigation from '../../navigation';
 import AppStatusBar from '../../components/AppStatusBar';
 import styles from './styles';

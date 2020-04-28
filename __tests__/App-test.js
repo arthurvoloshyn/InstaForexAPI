@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import QuotesList from '../src/screens/QuotesList';
+import QuotesList from '../src/views/screens/QuotesList';
 
 describe('App', () => {
   it('renders correctly', () => {
