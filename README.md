@@ -4,9 +4,9 @@ Simple React API Quotes InstaForex
 
 ### Demo
 
-- [iOS](https://expo.io/artifacts/2ef6c0f1-5f54-4d27-9012-b3808ecabaf9) (download)
-- [Android apk](https://expo.io/artifacts/85635a5b-9380-4e3e-be2a-62ff3ad0dc39) (download)
-- [Android app-bundle](https://expo.io/artifacts/d105c930-6921-4353-b978-d66f344378e0) (download)
+- [iOS](https://expo.io/artifacts/d986ffd0-7e65-4400-8d46-64e6849a629b) (download)
+- [Android apk](https://expo.io/artifacts/ec33ac5a-4624-4bce-8bd8-614dc827081e) (download)
+- [Android app-bundle](https://expo.io/artifacts/114bb6e2-e134-47f5-a0d0-5826bad602bd) (download)
 - [Web](https://instaforexapi.now.sh)
 - [Expo](https://expo.io/@arthurvoloshyn/InstaForexAPI/)
 - [Appetize](https://expo.io/appetize-simulator?url=https://expo.io/@arthurvoloshyn/InstaForexAPI/)
