@@ -1,6 +1,6 @@
 # InstaForexAPI
 
-Simple React API Quotes InstaForex
+Simple React Native API Quotes InstaForex
 
 ### Demo
 
