@@ -7,7 +7,7 @@
     "eslint --fix --max-warnings=0",
     "git add"
   ],
-  "**/*.+(css|scss|sass|less)": [
+  "**/*.+(js|jsx)": [
     "prettier --write",
     "stylelint --fix --max-warnings=0",
     "git add"
