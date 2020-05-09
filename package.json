@@ -18,7 +18,7 @@
     "test:coverage": "jest --bail --coverage",
     "lint:styles": "stylelint --fix \"src/**/*.{js,jsx}\"",
     "lint": "eslint --ext .js --ext .jsx --fix src __tests__ App.js",
-    "format": "prettier \"**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
+    "format": "prettier \"src/**/*.{js,jsx,yml,yaml,ts,tsx,md,graphql,mdx}\" --write",
     "precommit": "lint-staged",
     "predeploy": "yarn run build:web",
     "deploy": "now web-build -n instaforexapi",
