@@ -7,7 +7,7 @@ Simple React Native API Quotes InstaForex
 - [iOS](https://expo.io/artifacts/269be7fc-c6a6-4a60-86a5-28d9480e57ba) (download)
 - [Android apk](https://expo.io/artifacts/726e43c3-356d-4694-9462-b064c8b31ed1) (download)
 - [Android app-bundle](https://expo.io/artifacts/4adbb6a5-b5d0-4426-adc3-e417d175f0a7) (download)
-- [Web](https://instaforexapi.now.sh)
+- [Web](https://instaforexapi.arturw1998.vercel.app/)
 - [Expo](https://expo.io/@arthurvoloshyn/InstaForexAPI/)
 - [Appetize](https://expo.io/appetize-simulator?url=https://expo.io/@arthurvoloshyn/InstaForexAPI/)
 
