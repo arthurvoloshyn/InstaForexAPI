@@ -4,12 +4,12 @@ Simple React Native API Quotes InstaForex
 
 ### Demo
 
-- [iOS](https://expo.io/artifacts/269be7fc-c6a6-4a60-86a5-28d9480e57ba) (download)
-- [Android apk](https://expo.io/artifacts/726e43c3-356d-4694-9462-b064c8b31ed1) (download)
-- [Android app-bundle](https://expo.io/artifacts/4adbb6a5-b5d0-4426-adc3-e417d175f0a7) (download)
-- [Web](https://instaforexapi.arturw1998.vercel.app/)
-- [Expo](https://expo.io/@arthurvoloshyn/InstaForexAPI/)
-- [Appetize](https://expo.io/appetize-simulator?url=https://expo.io/@arthurvoloshyn/InstaForexAPI/)
+- [iOS simulator](https://expo.dev/artifacts/048560b1-0003-432d-bbce-e5fe233ad2bc) (download)
+- [Android apk](https://expo.dev/artifacts/b8314566-6fed-442c-b510-f15e2b99ae51) (download)
+- [Android app-bundle](https://expo.dev/artifacts/4c6ae698-8bf0-4fd0-941b-a266128427ab) (download)
+- [Web](https://instaforexapi.vercel.app/)
+- [Expo](https://expo.dev/@arthurvoloshyn/InstaForexAPI/)
+- [Appetize](https://expo.io/appetize-simulator?url=https://expo.dev/@arthurvoloshyn/InstaForexAPI/)
 
 ### To run
 
@@ -69,9 +69,17 @@ To run tests using Jest:
 yarn test
 ```
 
+### If the iOS build is not installable on your simulator because of "... is damaged and can't be opened.", please run:
+
+```
+xattr -rd com.apple.quarantine /path/to/your.app
+```
+
 ### Contribute
 
 Please contribute to the project if you know how to make it better, including this README :)
+
+---
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
