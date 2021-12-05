@@ -1,5 +1,5 @@
 {
-  "homepage": "https://instaforexapi.now.sh",
+  "homepage": "https://instaforexapi.vercel.app",
   "name": "instaforexapi",
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
